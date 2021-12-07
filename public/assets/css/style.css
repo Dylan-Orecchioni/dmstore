@@ -1,0 +1,15 @@
+@import url(root.css);
+
+.yoyo
+{
+    height: 15vh;
+    background-color: var(--colorbg);
+}
+
+.colortitle
+{
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--colorblue);
+    font-weight: bold;
+}
