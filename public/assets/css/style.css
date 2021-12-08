@@ -1,12 +1,30 @@
 @import url(root.css);
 
-.yoyo
+html
+{
+    background-color: #f8f8f8;
+}
+
+.styleAdmin
 {
     height: 15vh;
-    background-color: var(--colorbg);
+    background-color: var(--navbarAdmin);
+}
+.styleUser
+{
+    height: 15vh;
+    background-color: var(--navbarUser);
+    
 }
 
 .colortitle
+{
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--colorbg);
+    font-weight: bold;
+}
+.colortitle2
 {
     text-decoration: none;
     font-family: var(--font-family);
