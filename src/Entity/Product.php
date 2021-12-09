@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
-use Symfony\Component\Validator\Constraints\File;
+use Doctrine\ORM\Mapping as ORM;
+
 
 
 /**
