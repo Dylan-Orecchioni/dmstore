@@ -3,19 +3,13 @@
         <div class="col-12">
             <ul class="navbar-nav justify-content-center">
                 <li class="nav-item px-3">
-                    <a class="colortitle" href="">Administration</a>
+                    <a class="colortitle" href="{{ path('admin_home') }}">Administration</a>
+                </li>           
+                <li class="nav-item px-3">
+                    <a class="colortitle" href="{{ path('product_index') }}">Produits</a>
                 </li>    
                 <li class="nav-item px-3">
-                    <a class="colortitle" href="">S'inscrire</a>
-                </li>    
-                <li class="nav-item px-3">
-                    <a class="colortitle" href="#">Clients</a>
-                </li>    
-                <li class="nav-item px-3">
-                    <a class="colortitle" href="#">Produits</a>
-                </li>    
-                <li class="nav-item px-3">
-                    <a class="colortitle" href="#">Catégories</a>
+                    <a class="colortitle" href="{{ path('category_index') }}">Catégories</a>
                 </li>    
                 <li class="nav-item px-3">
                     <a class="colortitle" href="{{ path('home') }}">Revenir au site</a>

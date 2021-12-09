@@ -31,3 +31,9 @@ html
     color: var(--colorblue);
     font-weight: bold;
 }
+
+.divblock
+{
+    height: 100px;
+    width: 50px;
+}

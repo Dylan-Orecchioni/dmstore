@@ -1,0 +1,62 @@
+{% extends 'home/home.html.twig' %}
+
+{% block title %}D&MStore{% endblock %}
+
+{% block body %}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        {{ form_start(registrationForm, {'action': path('app_login'), 'method': 'POST'}) }}
+
+                            {{ form_row(registrationForm.email) }}
+                            {{ form_row(registrationForm.plainPassword) }}
+                            {{ form_row(registrationForm.firstname) }}
+                            {{ form_row(registrationForm.lastname) }}
+                            {{ form_row(registrationForm.age) }}
+                            {{ form_row(registrationForm.dateofbirth) }}
+                            {{ form_row(registrationForm.adress) }}
+                            {{ form_row(registrationForm.cp) }}
+                            {{ form_row(registrationForm.city) }}
+
+                            <button type="submit" class="btn btn-primary mt-3">S'inscrire</button>
+                        {{ form_end(registrationForm) }}
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                            <label for="inputPassword">Mot de passe</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+                            <input type="hidden" name="_csrf_token"
+                                value="{{ csrf_token('authenticate') }}"
+                            >
+
+                            {#
+                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                See https://symfony.com/doc/current/security/remember_me.html
+
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" name="_remember_me"> Remember me
+                                    </label>
+                                </div>
+                            #}
+
+                            <button class="btn btn-primary mt-3" type="submit">
+                                Connexion
+                            </button>
+                        </form>    
+                    </div>
+                </div>  
+            </div>  
+        </div>
+    </div>
+{% endblock %}

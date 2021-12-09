@@ -2,6 +2,20 @@
     <div class="container-fluid">
         <div class="col-12">
             <ul class="navbar-nav justify-content-around">
+                {% if app.user %}
+                
+                    {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+                        <li class="nav-item px-3">
+                            <a class="colortitle2" href="{{ path('admin_home') }}">Administration</a>
+                        </li>    
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="colortitle2" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    </li>
+
+                {% else %}
+                    
                 <li class="nav-item px-3">
                     <a class="colortitle2" href="">Homme</a>
                 </li>    
@@ -12,17 +26,25 @@
                     <a class="colortitle2" href="#">Entraineur</a>
                 </li>
                 <div>
-                    <img src="" alt="">
+                    <a class="colortitle2" href="{{ path('home') }}">Accueil</a>
                 </div>    
                 <li class="nav-item px-3">
                     <a class="colortitle2" href="#">A propos</a>
                 </li>    
                 <li class="nav-item px-3">
                     <a class="colortitle2" href="#">Contact</a>
-                </li>    
-                <li class="nav-item px-3">
-                    <a class="colortitle2" href="">Login</a>
-                </li>    
+                </li>
+                    {% if app.user %}
+
+                    <li class="nav-item px-3">
+                        <a class="colortitle2" href="{{ path('home') }}">Se deconnecter</a>
+                    </li>
+                    {% else %}
+                        <li class="nav-item px-3">
+                            <a class="colortitle2" href="{{ path('app_login') }}">Login</a>
+                        </li>    
+                    {% endif %}    
+                {% endif %}
             </ul>            
         </div>
     </div>
