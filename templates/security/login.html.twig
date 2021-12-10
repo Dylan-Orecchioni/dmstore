@@ -1,14 +1,14 @@
-{% extends 'home/home.html.twig' %}
+{% extends 'customer/base.html.twig' %}
 
 {% block title %}D&MStore{% endblock %}
 
 {% block body %}
-    <div class="container py-5">
+    <div class="container-fluid py-5">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8">
                 <div class="card">
                     <div class="card-body">
-                        {{ form_start(registrationForm, {'action': path('app_login'), 'method': 'POST'}) }}
+                        {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST'}) }}
 
                             {{ form_row(registrationForm.email) }}
                             {{ form_row(registrationForm.plainPassword) }}
@@ -27,13 +27,19 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <form method="post">
-                            <label for="inputEmail">Email</label>
-                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-                            <label for="inputPassword">Mot de passe</label>
-                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                <div class="cardForm col-9">
+                    
+                    <div class="">
+                        <form method="post" class="cardStyle">
+                        <h3 class="text-center colortitle2">Connectez-vous</h3>
+                            <div class="d-flex flex-column col-12 my-2">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="p-3 myRounded" autocomplete="email" required autofocus placeholder="exemple@exemple.fr">
+                            </div>
+                            <div class="d-flex flex-column col-12">
+                                <label for="inputPassword">Mot de passe</label>
+                                <input type="password" name="password" id="inputPassword" class="p-3 myRounded" autocomplete="current-password" required placeholder="Votre mot de passe...">
+                            </div>
 
                             <input type="hidden" name="_csrf_token"
                                 value="{{ csrf_token('authenticate') }}"
@@ -49,10 +55,11 @@
                                     </label>
                                 </div>
                             #}
-
-                            <button class="btn btn-primary mt-3" type="submit">
-                                Connexion
-                            </button>
+                            <div class="d-flex justify-content-center align-items-end pt-3 mt-5">
+                                <button class="btnStyle" type="submit">
+                                    Connexion
+                                </button>
+                            </div>
                         </form>    
                     </div>
                 </div>  
