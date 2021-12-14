@@ -4,22 +4,43 @@
 {% block body %}
 
 <div class="container py-5">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-center">Formulaire de contact</h3>
-                </div>
-                <div class="card-body">
-                    {{ form_start(form) }}
-                    {{ form_widget(form)}}
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-lg-11">
+                <div class="cardFormMain">
+                    <div class="cardStyle">
 
-                    <button class="btn btn-primary mt-3" type="submit">Envoyer</button>
-                    {{ form_end(form)}}
-                </div>
-            </div> 
-        </div>
-    </div>
-</div>
+                        {{ form_start(form, {'action': path('register_user'), 'method': 'POST'}) }}
+
+                        <h3 class="text-center colortitle2">CONTACTEZ-NOUS !</h3>
+
+                            <div class="d-flex justify-content-around align-items-center p-2 my-3">
+                                <div class="d-flex flex-column col-6">
+                                    <label for="inputEmail" class="labelStyle">EMAIL</label>                                 
+                                    {{ form_widget(form.email, {'attr': {'class': 'p-3 myRounded'}}) }}
+                                </div>
+                                <div class="d-flex flex-column col-4">
+                                    <label for="inputEmail" class="labelStyle">OBJET</label>                                 
+                                    {{ form_widget(form.subject, {'attr': {'class': 'p-3 myRounded'}}) }} 
+                                </div>                                                                                                           
+                            </div>
+
+                            <div class="d-flex justify-content-around align-items-center p-2 my-3">
+                                <div class="d-flex flex-column col-7">
+                                    <label for="inputEmail" class="labelStyle">MESSAGE</label>                                 
+                                    {{ form_widget(form.content, {'attr': {'class': 'p-3 myTextArea'}}) }}
+                                </div>
+                                <div class="d-flex justify-content-center align-items-end pt-3 mt-5">
+                                    <button class="btnStyle" type="submit">
+                                        ENVOYER
+                                    </button>
+                                </div>
+ 
+                            </div>
+
+
+                        {{ form_end(form) }}
+                    </div>                      
+                </div>          
+            </div>
 
 {% endblock %}
