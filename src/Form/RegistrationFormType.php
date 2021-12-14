@@ -2,10 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\Adress;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -21,13 +19,13 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email',EmailType::class,[
-                'label' => 'Votre email'
+                'label' => 'EMAIL'
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'label' => "Mot de passe",
+                'label' => "MOT DE PASSE",
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
@@ -36,16 +34,18 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('firstname',TextType::class,[
-                'label' => 'Votre prenom'
+                'label' => 'PRENOM'
             ])
             ->add('lastname',TextType::class,[
-                'label' => 'Votre nom'
+                'label' => 'NOM'
             ])
             ->add('age',TextType::class,[
-                'label' => 'Votre age'
+                'label' => 'AGE'
             ])
             ->add('dateofbirth',DateType::class,[
-                'label' => 'Date de naissance'
+                'label' => 'DATE DE NAISSANCE',
+                'widget' => 'single_text'
+                
             ])
             ->add('adress',TextType::class,[
                 'label' => 'Votre adresse',

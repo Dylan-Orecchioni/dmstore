@@ -12,6 +12,8 @@
     
 }
 
+
+
 .colortitle
 {
     text-decoration: none;
@@ -36,6 +38,11 @@
 
 }
 
+.cardStyle h3
+{
+    font-size: 4vh;
+}
+
 
 .cardForm
 {
@@ -43,6 +50,16 @@
     border-radius: 20%;
     margin-left: 5vh;
     padding-bottom: 5vh;
+    height: auto;
+    
+}
+.cardFormMain
+{
+    box-shadow: 0px 0px 22px 9px rgb(233, 233, 233);
+    border-radius: 8%;
+    margin-left: 5vh;
+    padding-bottom: 5vh;
+    height: auto; 
     
 }
 
@@ -54,7 +71,29 @@
 
 .btnStyle
 {
+    margin-top: 3vh;
+    padding: 2vh 10vh;
+    border-radius: 5vh;
+    color: var(--colorbg);
     background-color: var(--colorred);
     font-family: var(--title);
-}    
+    font-weight: 500;
+}
+
+.labelStyle
+{
+    margin: 2vh;
+    font-family: var(--title);
+    color: var(--colorblue);
+    font-size: 1.5vh;
+    font-weight: 500;
+}
+
+.coucou
+{
+    border-right: 2px solid #0000;
+    display: inline-block;
+    height: auto;
+    width: 1px;
+}
 

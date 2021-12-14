@@ -53,5 +53,7 @@ class HandleRegistrationController extends AbstractController
                 return $this->redirectToRoute('app_login');
             }
         }
+        
+        return $this->redirectToRoute('app_login');
     }
 }
