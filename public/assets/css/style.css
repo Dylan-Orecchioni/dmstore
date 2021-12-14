@@ -1,27 +1,40 @@
 @import url(root.css);
 
+body
+{
+    background-color: var(--colorbg);
+}
+
 .styleAdmin
 {
     height: 15vh;
     background-color: var(--navbarAdmin);
+    
 }
 .styleUser
 {
     height: 15vh;
-    background-color: var(--navbarUser);
-    
+    background-color: var(--colorbg);
+    position: fixed;
 }
 
 
 
-.colortitle
+.colortitleRed
+{
+    text-decoration: none;
+    font-family: var(--title);
+    color: var(--colorred);
+    font-weight: normal;
+}
+.colorAdmin
 {
     text-decoration: none;
     font-family: var(--title);
     color: var(--colorbg);
     font-weight: bold;
 }
-.colortitle2
+.colortitleBlue
 {
     text-decoration: none;
     font-family: var(--title);
@@ -48,6 +61,7 @@
 .cardForm
 {
     box-shadow: 0px 0px 22px 9px rgb(233, 233, 233);
+    background-color: #ffff;
     border-radius: 20%;
     margin-left: 5vh;
     padding-bottom: 5vh;
@@ -57,7 +71,7 @@
 .cardFormMain
 {
     box-shadow: 0px 0px 22px 9px rgb(233, 233, 233);
-    border-radius: 8%;
+    border-radius: 20%;
     margin-left: 5vh;
     padding-bottom: 5vh;
     height: auto; 
@@ -81,6 +95,7 @@
     margin-top: 3vh;
     padding: 2vh 10vh;
     border-radius: 5vh;
+    border: transparent;
     color: var(--colorbg);
     background-color: var(--colorred);
     font-family: var(--title);
@@ -104,3 +119,18 @@
     width: 1px;
 }
 
+.contentStyle
+{
+    background-color: var(--colorbg);
+}
+
+.aboutImg
+{
+    border-radius: 50%;
+    width: 30vh;
+}
+
+.text
+{
+    font-family: var(--text);
+}

@@ -6,12 +6,12 @@
     <div class="container-fluid py-5">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-lg-7">
-                <div class="cardFormMain">
+                <div class="cardForm">
                     <div class="cardStyle">
 
                         {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST'}) }}
 
-                        <h3 class="text-center colortitle2">Inscription</h3>
+                        <h3 class="text-center colortitleBlue">Inscription</h3>
 
                             <div class="d-flex justify-content-around align-items-center p-2 my-3">
                                 <div class="d-flex flex-column col-5">
@@ -72,7 +72,7 @@
                 <div class="cardForm">
                     
                         <form method="post" class="cardStyle">
-                        <h3 class="text-center colortitle2">Connectez-vous</h3>
+                        <h3 class="text-center colortitleBlue">Connectez-vous</h3>
                             <div class="d-flex flex-column col-12 my-2">
                                 <label for="inputEmail" class="labelStyle">Email</label>
                                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="p-3 myRounded" autocomplete="email" required autofocus placeholder="exemple@exemple.fr">

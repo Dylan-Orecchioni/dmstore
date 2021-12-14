@@ -6,14 +6,14 @@
                 
                     {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
                         <li class="nav-item px-3">
-                            <a class="colortitle2" href="{{ path('admin_home') }}">Administration</a>
+                            <a class="colortitleBlue" href="{{ path('admin_home') }}">Administration</a>
                         </li>    
                     {% endif %}
 
                 {% endif %}
 
                 <div class="dropdown">
-                    <a class="colortitle2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+                    <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
                         Homme
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <a class="colortitle2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Femme
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -34,7 +34,7 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a class="colortitle2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Entraineur
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -44,23 +44,23 @@
                     </ul>
                 </div>
                 <div>
-                    <a class="colortitle2" href="{{ path('home') }}">Accueil</a>
+                    <a class="colortitleBlue" href="{{ path('home') }}">Accueil</a>
                 </div>    
                 <li class="nav-item px-3">
-                    <a class="colortitle2" href="#">A propos</a>
+                    <a class="colortitleBlue" href="{{ path('a_propos') }}">A propos</a>
                 </li>    
                 <li class="nav-item px-3">
-                    <a class="colortitle2" href="{{ path('customer_contact') }}">Contact</a>
+                    <a class="colortitleBlue" href="{{ path('customer_contact') }}">Contact</a>
                 </li>
                 {% if app.user %}
                     
                     <li class="nav-item">
-                        <a class="colortitle2" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        <a class="colortitleBlue" href="{{ path('app_logout') }}">Se déconnecter</a>
                     </li>  
 
                 {% endif %}
                 <li class="nav-item px-3">
-                    <a class="colortitle2" href="{{ path('app_login') }}">Login</a>
+                    <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
                 </li>
             </ul>            
         </div>

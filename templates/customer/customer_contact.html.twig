@@ -6,27 +6,27 @@
 <div class="container py-5">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-lg-11">
-                <div class="cardFormMain">
+                <div class="cardForm">
                     <div class="cardStyle">
 
                         {{ form_start(form, {'action': path('register_user'), 'method': 'POST'}) }}
 
-                        <h3 class="text-center colortitle2">CONTACTEZ-NOUS !</h3>
+                        <h3 class="text-center colortitleBlue text-uppercase">Contactez-nous !</h3>
 
                             <div class="d-flex justify-content-around align-items-center p-2 my-3">
                                 <div class="d-flex flex-column col-6">
-                                    <label for="inputEmail" class="labelStyle">EMAIL</label>                                 
+                                    <label for="inputEmail" class="labelStyle text-uppercase">Email</label>                                 
                                     {{ form_widget(form.email, {'attr': {'class': 'p-3 myRounded'}}) }}
                                 </div>
                                 <div class="d-flex flex-column col-4">
-                                    <label for="inputEmail" class="labelStyle">OBJET</label>                                 
+                                    <label for="inputEmail" class="labelStyle text-uppercase">Objet</label>                                 
                                     {{ form_widget(form.subject, {'attr': {'class': 'p-3 myRounded'}}) }} 
                                 </div>                                                                                                           
                             </div>
 
                             <div class="d-flex justify-content-around align-items-center p-2 my-3">
                                 <div class="d-flex flex-column col-7">
-                                    <label for="inputEmail" class="labelStyle">MESSAGE</label>                                 
+                                    <label for="inputEmail" class="labelStyle text-uppercase">Message</label>                                 
                                     {{ form_widget(form.content, {'attr': {'class': 'p-3 myTextArea'}}) }}
                                 </div>
                                 <div class="d-flex justify-content-center align-items-end pt-3 mt-5">
