@@ -134,3 +134,14 @@ body
 {
     font-family: var(--text);
 }
+
+.fas
+{
+    color: var(--colorred);
+    font-size: 20px;
+}
+
+.fa-shopping-cart
+{
+    font-size: 5vh;
+}
