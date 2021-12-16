@@ -1,0 +1,18 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block body %}
+
+<div class="container py-5">
+    <a href="{{ path('category_show',{'id': category.id}) }}" class="btn btn-secondary mt-3">Revenir</a>
+    
+    <h1>Ajouter un Tag pour la categorie: {{category.name}}</h1>
+    
+
+    {{form_start(form)}}
+    {{form_widget(form)}}
+
+    <button type="submit">Ajouter</button>
+    {{form_end(form)}}
+</div>
+
+{% endblock %}

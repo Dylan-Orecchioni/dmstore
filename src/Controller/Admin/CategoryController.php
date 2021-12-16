@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use App\Form\CategoryType;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/category')]
+#[Route('/admin/category')]
 class CategoryController extends AbstractController
 {
     #[Route('/', name: 'category_index', methods: ['GET'])]
@@ -25,7 +25,7 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/new', name: 'category_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager,Image $image): Response
+    public function new(Request $request, EntityManagerInterface $em,Image $image): Response
     {
         $category = new Category();
         $form = $this->createForm(CategoryType::class, $category);
@@ -40,8 +40,8 @@ class CategoryController extends AbstractController
                 $image->save($file,$category);
             }
 
-            $entityManager->persist($category);
-            $entityManager->flush();
+            $em->persist($category);
+            $em->flush();
 
             return $this->redirectToRoute('category_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -56,7 +56,7 @@ class CategoryController extends AbstractController
     public function show(Category $category): Response
     {
         return $this->render('admin/category/show.html.twig', [
-            'category' => $category,
+            'category' => $category
         ]);
     }
 

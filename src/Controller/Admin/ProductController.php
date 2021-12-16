@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\MesServices\Image;
+use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,21 +14,31 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/product')]
+#[Route('/admin/product')]
 class ProductController extends AbstractController
 {
     #[Route('/', name: 'product_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository): Response
     {
-        return $this->render('product/index.html.twig', [
+        return $this->render('admin/product/index.html.twig', [
             'products' => $productRepository->findAll(),
         ]);
     }
 
-    #[Route('/new', name: 'product_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager,Image $image): Response
+    #[Route('/new/{id}', name: 'product_new', methods: ['GET', 'POST'])]
+    public function new(int $id,Request $request, EntityManagerInterface $entityManager,Image $image,CategoryRepository $categoryRepository): Response
     {
+        $category = $categoryRepository->find($id);
+
+        if (!$category) 
+        {
+            $this->addFlash("danger","Cette categorie n'existe pas.");
+            return $this->redirectToRoute("product_index");
+        }
+
         $product = new Product();
+        $product->setCategory($category);
+
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 
@@ -36,7 +47,8 @@ class ProductController extends AbstractController
             /** @var UploadedFile $file */
             $file = $form->get('file')->getData();
 
-            if ($file) {
+            if ($file) 
+            {
                 $image->save($file,$product);
             }
             
@@ -46,7 +58,7 @@ class ProductController extends AbstractController
             return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('product/new.html.twig', [
+        return $this->renderForm('admin/product/new.html.twig', [
             'product' => $product,
             'form' => $form,
         ]);
@@ -55,7 +67,7 @@ class ProductController extends AbstractController
     #[Route('/{id}', name: 'product_show', methods: ['GET'])]
     public function show(Product $product): Response
     {
-        return $this->render('product/show.html.twig', [
+        return $this->render('admin/product/show.html.twig', [
             'product' => $product,
         ]);
     }
@@ -72,7 +84,7 @@ class ProductController extends AbstractController
             return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('product/edit.html.twig', [
+        return $this->renderForm('admin/product/edit.html.twig', [
             'product' => $product,
             'form' => $form,
         ]);
@@ -88,4 +100,5 @@ class ProductController extends AbstractController
 
         return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
     }
+    
 }

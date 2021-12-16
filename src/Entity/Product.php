@@ -50,6 +50,12 @@ class Product
      */
     private $category;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Tag::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $tag;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -126,4 +132,18 @@ class Product
 
         return $this;
     }
+
+    public function getTag(): ?Tag
+    {
+        return $this->tag;
+    }
+
+    public function setTag(?Tag $tag): self
+    {
+        $this->tag = $tag;
+
+        return $this;
+    }
+
 }
+

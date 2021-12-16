@@ -18,6 +18,7 @@
                             <h5 class="text-center">{{ category.name }}</h5>
                         </div>
                         <div class="card-footer d-flex flex-column">
+                            <a class="btn btn-primary" href="{{ path('category_show',{'id' : category.id }) }}">Voir plus</a>
                             <a class="btn btn-info" href="{{ path('category_edit',{'id' : category.id }) }}">Modifier</a>
                             <a class="btn btn-danger" href="{{ path('category_delete',{'id' : category.id }) }}">Supprimer</a>
                         </div>

@@ -1,0 +1,27 @@
+{% extends "customer/base.html.twig" %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3 d-flex justify-content-around align-items-center">
+                <h1 class="text-center py-5">Liste des produits</h1>
+            </div>
+            {% for product in products %}
+                <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top" style="height: 30vh;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-center">{{ product.name }}</h5>
+                            <h5 class="text-center">{{ product.category }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    
+    </div>
+
+{% endblock %}

@@ -3,9 +3,9 @@
 {% block body %}
     <h1>Modifier les Produits</h1>
 
-    {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/product/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('product_index') }}">back to list</a>
 
-    {{ include('product/_delete_form.html.twig') }}
+    {{ include('admin/product/_delete_form.html.twig') }}
 {% endblock %}

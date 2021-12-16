@@ -12,37 +12,29 @@
 
                 {% endif %}
 
-                <div class="dropdown">
-                    <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
-                        Homme
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Vetement</a></li>
-                        <li><a class="dropdown-item" href="#">Protection</a></li>
-                        <li><a class="dropdown-item" href="#">Accessoires</a></li>
-                    </ul>
-                </div>
 
-                <div class="dropdown">
-                    <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Femme
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Vetement</a></li>
-                        <li><a class="dropdown-item" href="#">Protection</a></li>
-                        <li><a class="dropdown-item" href="#">Accessoires</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Entraineur
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Vetement</a></li>
-                        <li><a class="dropdown-item" href="#">Protection</a></li>
-                        <li><a class="dropdown-item" href="#">Accessoires</a></li>
-                    </ul>
-                </div>
+
+                {% for category in categoryRepository.findAll() %}
+
+                    <div class="dropdown">
+                        <a class="colortitleBlue" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ category.name}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            {% for tag in category.tags %}
+
+                                <li><a class="dropdown-item" href="{{ path('customer_category_show',{'idCategory': category.id, 'idTag': tag.id }) }}">{{tag.name}}</a></li>
+                            
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                {% endfor %}
+
+
+
+
+
                 <div>
                     <a class="colortitleBlue" href="{{ path('home') }}">Accueil</a>
                 </div>    
@@ -63,7 +55,7 @@
                     <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href=""><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>            
         </div>

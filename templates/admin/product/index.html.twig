@@ -6,16 +6,16 @@
         <div class="row">
             <div class="col-12 mt-3 d-flex justify-content-around align-items-center">
                 <h1 class="text-center py-5">Liste des produits</h1>
-                <a class="btn btn-primary" href="{{ path('product_new') }}">Ajouter</a>
             </div>
             {% for product in products %}
                 <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
                     <div class="card">
                         <div class="card-header">
-                            <img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top w-" style="height: 30vh;">
+                            <img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top" style="height: 30vh;">
                         </div>
                         <div class="card-body">
                             <h5 class="text-center">{{ product.name }}</h5>
+                            <h5 class="text-center">{{ product.category }}</h5>
                         </div>
                         <div class="card-footer d-flex flex-column">
                             <a class="btn btn-info" href="{{ path('product_edit',{'id' : product.id }) }}">Modifier</a>

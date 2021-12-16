@@ -34,9 +34,15 @@ class Category
      */
     private $products;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Tag::class, mappedBy="category")
+     */
+    private $tags;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -103,4 +109,33 @@ class Category
         return $this;
     }
 
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->removeElement($tag)) {
+            // set the owning side to null (unless already changed)
+            if ($tag->getCategory() === $this) {
+                $tag->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
 }
