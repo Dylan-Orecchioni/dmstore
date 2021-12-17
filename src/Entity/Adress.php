@@ -18,12 +18,6 @@ class Adress
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $adress;
@@ -38,21 +32,15 @@ class Adress
      */
     private $city;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="adress", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUser(): ?user
-    {
-        return $this->user;
-    }
-
-    public function setUser(user $user): self
-    {
-        $this->user = $user;
-
-        return $this;
     }
 
     public function getAdress(): ?string
@@ -87,6 +75,18 @@ class Adress
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

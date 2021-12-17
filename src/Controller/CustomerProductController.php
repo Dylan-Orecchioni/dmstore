@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CustomerProductController extends AbstractController
 {
     /**
-     * @Route("customer/product/{id}", name="customer_product_show")
+     * @Route("customer/product/{id}", name="product_show")
      */
     public function show(int $id,ProductRepository $productRepository)
     {
@@ -27,10 +27,10 @@ class CustomerProductController extends AbstractController
             $this->addFlash("danger","Le produit est introuvable.");
             return $this->redirectToRoute("customer_home");
         }
-
         return $this->render("customer/product_show.html.twig",[
             'product' => $product
         ]);
+        
     }
 
     /**
@@ -61,7 +61,7 @@ class CustomerProductController extends AbstractController
 
 
     /**
-     * @Route("customer/category/{idCategory}/{idTag}", name="customer_category_show")
+     * @Route("customer/category/{idCategory}/{idTag}", name="customer_product_show")
      */
     public function productFilter(int $idCategory,int $idTag,ProductRepository $productRepository,CategoryRepository $categoryRepository,TagRepository $tagRepository)
     {

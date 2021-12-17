@@ -23,7 +23,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             {% for tag in category.tags %}
 
-                                <li><a class="dropdown-item" href="{{ path('customer_category_show',{'idCategory': category.id, 'idTag': tag.id }) }}">{{tag.name}}</a></li>
+                                <li><a class="dropdown-item" href="{{ path('customer_product_show',{'idCategory': category.id, 'idTag': tag.id }) }}">{{tag.name}}</a></li>
                             
                             {% endfor %}
                         </ul>
@@ -55,7 +55,7 @@
                     <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a href="{{ path('cart_detail') }}"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>            
         </div>

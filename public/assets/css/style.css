@@ -138,7 +138,10 @@ body
 .fas
 {
     color: var(--colorred);
-    font-size: 10px;
+}
+.fab
+{
+    color: rgb(0, 183, 255);
 }
 
 .fa-shopping-cart
@@ -149,4 +152,27 @@ body
 .footer
 {
     height: 100px;
+}
+.footerStyle
+{
+    color: var(--colorblue);
+    font-size: 1.5vh;
+    font-weight: 500;
+}
+
+.pucelist
+{
+    list-style-type: none;
+}
+
+.stylelist
+{
+    text-decoration: none;
+    font-family: var(--title);
+}
+
+.hr
+{
+    color: var(--colorred);
+    
 }

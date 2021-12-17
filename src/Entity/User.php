@@ -57,6 +57,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $age;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Adress::class, mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $adress;
+
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +178,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAge(int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getAdress(): ?Adress
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(Adress $adress): self
+    {
+        // set the owning side of the relation if necessary
+        if ($adress->getUser() !== $this) {
+            $adress->setUser($this);
+        }
+
+        $this->adress = $adress;
 
         return $this;
     }

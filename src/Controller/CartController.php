@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\MesServices\CartService\CartItem;
 use App\Repository\ProductRepository;
+use App\MesServices\CartService\CartService;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CartController extends AbstractController
@@ -13,44 +13,81 @@ class CartController extends AbstractController
     /**
      * @Route("panier/ajout/{id}",name="add_product")
      */
-    public function add(int $id, ProductRepository $productRepository,SessionInterface $session)
+    public function add(int $id, ProductRepository $productRepository,CartService $cartService,Request $request)
+    {
+        //JE VERIFIE SI LE PRODUIT EXISTE BEL ET BIEN DANS LA BDD
+        $product = $productRepository->find($id);
+        if(!$product)
+        {
+             $this->addFlash("danger","Le produit est introuvable.");
+             return $this->redirectToRoute("customer_home");
+        }
+
+        $cartService->addProduct($id);
+        
+        $this->addFlash("success","Le produit a bien été ajouté.");
+
+
+        $returnToCart = $request->query->get('returnToCart');
+
+        if(isset($returnToCart))
+        {
+            return $this->redirectToRoute("cart_detail");  
+        }
+        
+        return $this->redirectToRoute("product_show",['id' => $id]);        
+    }
+
+    /**
+     * @Route("panier/detail",name="cart_detail")
+     */
+    public function detail(CartService $cartService)
+    {
+        $detailCart = $cartService->getDetailedCartItems();
+
+        $total = $cartService->getTotal();
+
+        return $this->render("customer/detail_cart.html.twig",[
+            'detailCart' => $detailCart,
+            'totalCart' => $total
+        ]);
+    }
+
+     /**
+     * @Route("panier/supprimer/{id}",name="remove_item_cart")
+     */
+    public function removeItem(int $id,ProductRepository $productRepository,CartService $cartService)
     {
         $product = $productRepository->find($id);
 
-        if (!$product) 
+        if(!$product)
         {
-            $this->addFlash("danger", "Le produit est introuvable.");
-            return $this->redirectToRoute('home');
-        }
- 
-        $cart = $session->get('cart',[]);
-
-        $qty = 1;
-
-        foreach ($cart as $item) 
-        {
-            if ($item->getId() === $id) 
-            {
-                $qtyActuel = $item->getQty();
-
-                $item->setQty($qtyActuel + $qty);
-
-                $session->set('cart',$cart);
-
-                $this->addFlash("success", "Le produit a bien été ajouté.");
-                return $this->redirectToRoute('');
-            }
+             $this->addFlash("danger","Le produit est introuvable.");
+             return $this->redirectToRoute("cart_detail");
         }
 
-        $cartItem = new CartItem();
-        $cartItem->setId($id);
-        $cartItem->setQty($qty);
+        $cartService->removeItem($id);
 
-        $cart[] = $cartItem;
+        $this->addFlash("success","Le produit a bien été supprimé du panier.");
+        return $this->redirectToRoute("cart_detail");
+    }
 
-        $session->set('cart',$cart);
+    /**
+     * @Route("panier/decrementer/{id}",name="decrement_product_cart")
+     */
+    public function decrementProduct(int $id,ProductRepository $productRepository,CartService $cartService)
+    {
+        $product = $productRepository->find($id);
 
-        $this->addFlash("success","Le produit a bien été ajouté.");
-        return $this->redirectToRoute('');
+        if(!$product)
+        {
+             $this->addFlash("danger","Le produit est introuvable.");
+             return $this->redirectToRoute("cart_detail");
+        }
+
+        $cartService->decrementProduct($id);
+
+        $this->addFlash("success","La quantité du produit a bien été décrémentée.");
+        return $this->redirectToRoute("cart_detail");
     }
 }
