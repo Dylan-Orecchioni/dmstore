@@ -1,26 +1,22 @@
 {% extends "customer/base.html.twig" %}
 
-{% block body %}
 
+{% block body %}
 <div class="container py-5">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-12">
-            <h3 class="text-center">
-                Mon panier
-            </h3>
-        </div>
+
+    <div class="row">
 
         <div class="col-12 mt-3">
             {% include "customer/shared/_messages_flash.html.twig" %}
         </div>
 
-        <div class="col-sm-12 col-md-10 col-lg-8 mt-3">
-
+        <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
             <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Récapitulatif</h3>
+                </div>
                 <div class="card-body">
-                    {% if detailCart | length > 0 %}
-
-                        <div class="table-responsive">
+                    <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
@@ -38,15 +34,12 @@
                                                     <img src=" {{ item.product.imagePath }}" alt="{{ item.product.name }}" class="imageProductCart">
                                                     <div class="d-flex flex-column align-items-center justify-content-center">
                                                         <p>{{ item.product.name }}</p>
-                                                        <a class="btn btn-link text-danger btn-sm" href="{{ path('remove_item_cart',{'id': item.product.id }) }}"><i class="fas fa-trash"></i> Supprimer</a>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>{{ item.product.price | euroPrice }}</td>
                                             <td>
-                                                <a class="btn btn-dark" href="{{ path('decrement_product_cart',{'id': item.product.id}) }}"><i class="fas fa-minus-circle"></i></a>
                                                 <button class="btn btn-light">{{ item.qty }}</button>
-                                                <a class="btn btn-dark" href="{{ path('add_product',{'id': item.product.id}) }}?returnToCart=true"><i class="fas fa-plus-circle"></i></a>
                                             </td>
                                             <td>{{ item.total | euroPrice }}</td>
                                         </tr>
@@ -59,21 +52,53 @@
                                 </tbody>
                             </table>
                         </div>
-
-                        <div class="d-flex justify-content-end">
-                            <a href="{{ path('customer_recap_order') }}" class="btn btn-primary"> Valider mon panier</a>
-                        </div>
-
-                    {% else %}
-                        <p>Le panier est vide.</p>
-                        <br/>
-                        <a class="btn btn-link">Continuer le shopping</a>
-                    {% endif  %}
                 </div>
             </div>
-
         </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+            {% if app.user %}
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Adresse de livraison</h3>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button class="btn btn-primary mt-3">Enregistrer</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h3 class="text-center">Paiement en ligne</h3>
+                    </div>
+                    <div class="card-body">
+                        {% if app.user.adress is not same as null %}
+                            <form action="{{ path('create_checkout_session') }}" method="POST">
+                                <button type="submit" id="checkout-button" class="btn btn-success w-100">Paiement sur stripe</button>
+                            </form>
+                        {% else %}
+                            <p>Veuillez configurer votre adresse pour pouvoir finaliser la commande.</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Veuillez vous connecter</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Déjà un compte ? <a href="{{ path('app_login' )}}" class="btn btn-primary">Veuillez vous connecter</a></p>
+                        <hr>
+                        <p>Pas encore de compte ? <a href="{{ path('app_login' )}}" class="btn btn-link">Veuillez en créer un</a></p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
     </div>
 </div>
-
 {% endblock %}
