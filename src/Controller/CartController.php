@@ -35,7 +35,7 @@ class CartController extends AbstractController
             return $this->redirectToRoute("cart_detail");  
         }
         
-        return $this->redirectToRoute("product_show",['id' => $id]);        
+        return $this->redirectToRoute("product_show_detail",['id' => $id]);        
     }
 
     /**

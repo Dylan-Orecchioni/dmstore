@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CustomerProductController extends AbstractController
 {
     /**
-     * @Route("customer/product/{id}", name="product_show")
+     * @Route("customer/product/{id}", name="product_show_detail")
      */
     public function show(int $id,ProductRepository $productRepository)
     {
@@ -27,43 +27,16 @@ class CustomerProductController extends AbstractController
             $this->addFlash("danger","Le produit est introuvable.");
             return $this->redirectToRoute("customer_home");
         }
-        return $this->render("customer/product_show.html.twig",[
+        return $this->render("customer/product_show_detail.html.twig",[
             'product' => $product
         ]);
         
     }
 
     /**
-     * @Route("customer/product", name="customer_product_showAll")
-     */
-    public function index(ProductRepository $productRepository, PaginatorInterface $paginator,Request $request): Response
-    {
-
-        $search = new SearchProduct();
-        
-        $form = $this->createForm(SearchProductType::class,$search);
-
-        $form->handleRequest($request);
-
-        $products = $paginator->paginate(
-            $productRepository->findAll($search),
-            $request->query->getInt('page', 1),
-            6
-        );
-
-        
-        return $this->render('customer/product_showAll.html.twig', [
-            'products' => $products,
-            'form' => $form->createView()
-        ]);
-        
-    }
-
-
-    /**
      * @Route("customer/category/{idCategory}/{idTag}", name="customer_product_show")
      */
-    public function productFilter(int $idCategory,int $idTag,ProductRepository $productRepository,CategoryRepository $categoryRepository,TagRepository $tagRepository)
+    public function index(int $idCategory,int $idTag,ProductRepository $productRepository,CategoryRepository $categoryRepository,TagRepository $tagRepository)
     {
         
         

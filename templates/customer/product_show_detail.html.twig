@@ -22,7 +22,7 @@
                     </div>
                     <div class="card-body">
                         <p class="text-center">{{ product.category.name }}</p>
-                        <p class="text-center">{{ product.price}}</p>
+                        <p class="text-center">{{ product.price | euroPrice}}</p>
                     </div>
                     <div class="card-footer">
                         <a href="{{ path('add_product',{'id' : product.id}) }}" class="btn btn-primary w-100">Ajouter au panier</a>
