@@ -3,6 +3,8 @@
 namespace App\MesServices;
 
 use DateTime;
+use App\Entity\User;
+use App\Entity\Commande;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
 
@@ -37,4 +39,26 @@ class MailerService
 
         $this->mailer->send($email);
     }
-}
+
+    public function sendCommandMail(Commande $commande, User $user)
+    {
+        $email = (new TemplatedEmail())
+                ->from('contact@dmstore.com')
+                ->to($user->getEmail())
+                ->subject('Commande n°' . $commande->getId())
+
+                ->htmlTemplate('emails/email_command_customer.html.twig')
+
+                ->context([
+                    'user' => $user,
+                    'adress' => $user->getAdress(),
+                    'id' => $commande->getId(),
+                    'total' => $commande->getTotal(),
+                    'date' => $commande->getDate(),
+                    'contents' => $commande->getCommandeListProduct()->getContentLists(),
+
+                ])
+            ;
+        $this->mailer->send($email);
+    }
+}    

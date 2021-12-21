@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -55,6 +57,16 @@ class Product
      * @ORM\JoinColumn(nullable=false)
      */
     private $tag;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ContentList::class, mappedBy="product")
+     */
+    private $contentLists;
+
+    public function __construct()
+    {
+        $this->contentLists = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -141,6 +153,36 @@ class Product
     public function setTag(?Tag $tag): self
     {
         $this->tag = $tag;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ContentList[]
+     */
+    public function getContentLists(): Collection
+    {
+        return $this->contentLists;
+    }
+
+    public function addContentList(ContentList $contentList): self
+    {
+        if (!$this->contentLists->contains($contentList)) {
+            $this->contentLists[] = $contentList;
+            $contentList->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContentList(ContentList $contentList): self
+    {
+        if ($this->contentLists->removeElement($contentList)) {
+            // set the owning side to null (unless already changed)
+            if ($contentList->getProduct() === $this) {
+                $contentList->setProduct(null);
+            }
+        }
 
         return $this;
     }
