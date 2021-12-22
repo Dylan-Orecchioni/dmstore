@@ -97,6 +97,16 @@
     font-family: var(--title);
     font-weight: 500;
 }
+.btnAdmin
+{
+    padding: 2vh 10vh;
+    border-radius: 5vh;
+    border: transparent;
+    color: var(--colorbg);
+    background-color: var(--colorbtnAdmin);
+    font-family: var(--title);
+    font-weight: 500;
+}
 
 .labelStyle
 {

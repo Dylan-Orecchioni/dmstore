@@ -20,7 +20,7 @@ class CategoryType extends AbstractType
             ])
             ->add('file',FileType::class,[
                 'mapped' => false,
-                'label' => 'Choisir le fichier.',
+                'label' => 'Choisir le fichier',
                 'constraints' => [
                     new File([
                         'maxSize' => '1m'
