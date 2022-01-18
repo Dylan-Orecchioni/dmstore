@@ -1,5 +1,11 @@
 @import url(root.css);
+@import url(media.css);
 
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
 
 .styleAdmin
 {
@@ -7,14 +13,12 @@
     background-color: var(--navbarAdmin);
     
 }
+
 .styleUser
 {
-    height: 15vh;
     background-color: var(--colorbg);
-    position: fixed;
+    border-bottom: blue solid 1px;
 }
-
-
 
 .colortitleRed
 {
@@ -181,4 +185,37 @@
 {
     color: var(--colorred);
     
+}
+
+.nav-item, .dropdownList
+{
+    padding: 1.5vw;
+}
+
+.burger 
+{
+    color: var(--colorblue);
+}
+
+.custom-toggler .navbar-toggler-icon 
+{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(17,17,115)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+  
+.custom-toggler.navbar-toggler
+{
+    border-color: var(--colorblue);
+} 
+
+.border1 {
+    border: red solid 2px;
+}
+.border2 {
+    border: green solid 2px;
+}
+.border3 {
+    border: blue solid 2px;
+}
+.border4 {
+    border: orange solid 2px;
 }
