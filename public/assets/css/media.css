@@ -1,12 +1,2 @@
-@media screen and (max-width: 991px)
-{
-    .myMenu
-    {
-        display: flex;
-        justify-content: end;
-        align-items: flex-end;
-        
-    }
-    
-}
+
  
