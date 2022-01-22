@@ -3,73 +3,73 @@
 {% block title %}D&MStore{% endblock %}
 
 {% block body %}
-    <div class="container-fluid py-5">
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-lg-7">
-                <div class="cardForm">
-                    <div class="cardStyle">
+    <div class="container-fluid">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST', 'attr': {'class': 'col-lg-8 cardForm border3 d-flex flex-wrap flex-column justify-content-center align-items-center py-3'}}) }}
+                <div class="py-3">
+                    <h3 class="text-center colortitleBlue">Inscription</h3>
+                </div>
 
-                        {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST'}) }}
+                <div class="py-3 text-center border1 d-flex align-items-center justify-content-around col-lg-10">
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Email</label>                                 
+                        {{ form_widget(registrationForm.email, {'attr': {'class': 'myRounded'}}) }}
+                    </div>
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Mot de passe</label>                                 
+                        {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'myRounded'}}) }} 
+                    </div>                                                                                                           
+                </div>
 
-                        <h3 class="text-center colortitleBlue">Inscription</h3>
+                <div class="py-3 text-center border2 d-flex align-items-center justify-content-around col-lg-10">
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Prenom</label>                                 
+                        {{ form_widget(registrationForm.firstname, {'attr': {'class': 'myRounded'}}) }}
+                    </div>
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Nom</label>                                 
+                        {{ form_widget(registrationForm.lastname, {'attr': {'class': 'myRounded'}}) }}
+                    </div>
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Age</label>                                 
+                        {{ form_widget(registrationForm.age, {'attr': {'class': 'myRounded'}}) }}
+                    </div>
+                </div>
 
-                            <div class="d-flex justify-content-around align-items-center p-2 my-3">
-                                <div class="d-flex flex-column col-5">
-                                    <label for="inputEmail" class="labelStyle">Email</label>                                 
-                                    {{ form_widget(registrationForm.email, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                                <div class="d-flex flex-column col-5">
-                                    <label for="inputEmail" class="labelStyle">Mot de passe</label>                                 
-                                    {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'p-3 myRounded'}}) }} 
-                                </div>                                                                                                           
-                            </div>
+                <div class="text-center py-3 border3 d-flex align-items-center justify-content-around col-lg-10">
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Date de naissance</label>                                 
+                        {{ form_widget(registrationForm.dateofbirth, {'attr': {'class': 'myRounded'}}) }}                                  
+                    </div>
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Adresse</label>
+                        {{ form_widget(registrationForm.adress, {'attr': {'class': ' myRounded'}}) }}
+                    </div>
+                </div>
 
-                            <div class="d-flex justify-content-around align-items-center p-2 my-3">
-                                <div class="d-flex flex-column col-4">
-                                    <label for="inputEmail" class="labelStyle">Prenom</label>                                 
-                                    {{ form_widget(registrationForm.firstname, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                                <div class="d-flex flex-column col-4">
-                                    <label for="inputEmail" class="labelStyle">Nom</label>                                 
-                                    {{ form_widget(registrationForm.lastname, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                                <div class="d-flex flex-column col-2">
-                                    <label for="inputEmail" class="labelStyle">Age</label>                                 
-                                    {{ form_widget(registrationForm.age, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                            </div>
+                <div class="text-center py-3 border4 d-flex align-items-center justify-content-around col-lg-10">
+                    <div>
+                        <label for="inputEmail" class="labelStyle">CP</label>
+                        {{ form_widget(registrationForm.cp, {'attr': {'class': 'myRounded'}}) }}
+                    </div>
+                    <div>
+                        <label for="inputEmail" class="labelStyle">Ville</label>
+                        {{ form_widget(registrationForm.city, {'attr': {'class': ' myRounded'}}) }}
+                    </div>
+                </div>
 
-                            <div class="d-flex flex-wrap justify-content-between align-items-center p-3 my-2">
-                                <div class="d-flex flex-column col-3">
-                                    <label for="inputEmail" class="labelStyle">Date de naissance</label>                                 
-                                    {{ form_widget(registrationForm.dateofbirth, {'attr': {'class': 'p-3 myRounded'}}) }}                                  
-                                </div>
-                                <div class="d-flex flex-column col-4">
-                                    <label for="inputEmail" class="labelStyle">Adresse</label>
-                                    {{ form_widget(registrationForm.adress, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                                <div class="d-flex flex-column col-2">
-                                    <label for="inputEmail" class="labelStyle">CP</label>
-                                    {{ form_widget(registrationForm.cp, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                                <div class="d-flex flex-column col-2">
-                                    <label for="inputEmail" class="labelStyle">Ville</label>
-                                    {{ form_widget(registrationForm.city, {'attr': {'class': 'p-3 myRounded'}}) }}
-                                </div>
-                            </div>
+                <div class="">
+                    <button class="btnStyle" type="submit">
+                        S'inscrire
+                    </button>
+                </div>
 
-                            <div class="d-flex justify-content-center align-items-end pt-3 mt-5">
-                                <button class="btnStyle" type="submit">
-                                    S'inscrire
-                                </button>
-                            </div>
+            {{ form_end(registrationForm) }}
+            
+        </div>
 
-                        {{ form_end(registrationForm) }}
-                    </div>                      
-                </div>          
-            </div>
-            <div class="col-sm-12 col-md-8 col-lg-4">
-                <div class="cardForm">
+        {# <div class="border2 col-sm-12 col-md-12 col-lg-4">
+                <div class="cardForm border3">
                     
                         <form method="post" class="cardStyle">
                         <h3 class="text-center colortitleBlue">Connectez-vous</h3>
@@ -86,16 +86,6 @@
                                 value="{{ csrf_token('authenticate') }}"
                             >
 
-                            {#
-                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                                See https://symfony.com/doc/current/security/remember_me.html
-
-                                <div class="checkbox mb-3">
-                                    <label>
-                                        <input type="checkbox" name="_remember_me"> Remember me
-                                    </label>
-                                </div>
-                            #}
                             <div class="d-flex justify-content-center align-items-end pt-3 mt-5">
                                 <button class="btnStyle" type="submit">
                                     Se connecter
@@ -103,7 +93,6 @@
                             </div>
                         </form>    
                 </div>  
-            </div>  
-        </div>
+            </div> #}
     </div>
 {% endblock %}

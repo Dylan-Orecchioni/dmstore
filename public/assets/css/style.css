@@ -43,32 +43,13 @@
     font-weight: bold;
 }
 
-.cardStyle
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5vh;
-
-}
-
-.cardStyle h3
-{
-    font-size: 4vh;
-    font-weight: normal;
-}
-
-
 .cardForm
 {
     box-shadow: 0px 0px 22px 9px rgb(233, 233, 233);
     background-color: #ffff;
-    border-radius: 20%;
-    margin-left: 5vh;
-    padding-bottom: 5vh;
-    height: auto;
-    
+    border-radius: 15%;
 }
+
 .cardFormMain
 {
     box-shadow: 0px 0px 22px 9px rgb(233, 233, 233);
@@ -83,6 +64,7 @@
 {
     border-radius: 50rem;
     border:solid 1px #111173;
+    padding: 0.5vh;
 }
 
 .myTextArea
