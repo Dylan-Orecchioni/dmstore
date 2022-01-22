@@ -1,0 +1,19 @@
+.fas
+{
+    color: var(--colorred);
+}
+.fab
+{
+    color: var(--colorblue);
+}
+
+.fa-shopping-cart
+{
+    font-size: 5vh;
+}
+
+.logoInsta, .logoFb, .logoTwitter, .logoYoutube
+{
+    height: 2vw;
+    padding: 0 1.5vh;
+}

@@ -1,40 +1,50 @@
-<div class="footer">
+<div class="footer ">
     <div class="row">
         <div class="col-12 d-flex flex-column justify-content-center align-items-center">
             <div>
-                <img src="" alt="">
+                <a href="{{ path('home') }}">
+                    <img src="{{ asset('uploads/images/logo.png') }}" alt="Logo">
+                </a>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <hr style="width: 10vh" class="mx-3 hr">
-                <h3 class="text-center my-3 colortitleBlue">Suivez-nous !</h3>
-                <hr style="width: 10vh" class="mx-3 hr">
+            <div class=" d-flex justify-content-center align-items-center">
+                <span><hr class="hr"></span>
+                <h3 class="text-center my-3 colortitleBlue"> Suivez-nous !</h3>
+                <span><hr class="hr"></span>    
             </div>
             <div class="">
-                <div class="d-flex justify-content-center align-items-center">
-                    <i class="fab fa-facebook px-4"></i>
-                    <i class="fab fa-instagram px-4"></i>
-                    <i class="fab fa-twitter px-4"></i>
-                    <i class="fab fa-youtube px-4"></i>
+                <div class="d-flex justify-content-center align-items-center ">
+                    <a href="#">
+                        <img src="{{ asset('uploads/images/logoFb.png') }}" alt="logo instagram" class="logoInsta">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('uploads/images/logoInsta.png') }}" alt="logo facebook" class="logoFb">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('uploads/images/logoTwitter.png') }}" alt="logo twitter" class="logoTwitter">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('uploads/images/logoYoutube.png') }}" alt="logo youtube" class="logoYoutube">
+                    </a>
                 </div>
                 <div class="">
                     <ul class="d-flex justify-content-center align-items-center my-4">
                         <li class="pucelist">
-                            <a class="footerStyle stylelist p-3" href="{{ path('app_login') }}">Homme</a>
+                            <a class="footerStyle stylelist p-2" href="{{ path('app_login') }}">Homme</a>
                         </li>
                         <li class="pucelist">
-                            <a class="footerStyle stylelist p-3" href="{{ path('app_login') }}">Femme</a>
+                            <a class="footerStyle stylelist p-2" href="{{ path('app_login') }}">Femme</a>
                         </li>
                         <li class="pucelist">
-                            <a class="footerStyle stylelist p-3" href="{{ path('app_login') }}">Entraineur</a>
+                            <a class="footerStyle stylelist p-2" href="{{ path('app_login') }}">Entraineur</a>
                         </li>
                         <li class="pucelist">
-                            <a class="footerStyle stylelist p-3" href="{{ path('app_login') }}">A propos</a>
+                            <a class="footerStyle stylelist p-2" href="{{ path('app_login') }}">A propos</a>
                         </li>
                         <li class="pucelist">
-                            <a class="footerStyle stylelist p-3" href="{{ path('app_login') }}">Contact</a>
+                            <a class="footerStyle stylelist p-2" href="{{ path('app_login') }}">Contact</a>
                         </li>
                         <li class="pucelist">
-                            <a class="footerStyle stylelist p-3" href="{{ path('app_login') }}">Login</a>
+                            <a class="footerStyle stylelist p-2" href="{{ path('app_login') }}">Login</a>
                         </li>
 
                     </ul>
