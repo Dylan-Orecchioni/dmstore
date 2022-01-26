@@ -1,3 +1,5 @@
+/* ============================ 991px ============================ */
+
 @media screen and (max-width: 991px) 
 {
    .wrap {
@@ -9,6 +11,9 @@
        padding: 10px;
    }    
 }
+
+/* ============================ 768px ============================ */
+
 @media only screen and (min-width: 768px) 
 {
     .logo 
@@ -36,13 +41,14 @@
 
     .wrap {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         padding: 10px;
     } 
 }
+
+/* ============================ 576px ============================ */
 
 @media screen and (min-width: 576px) 
 {

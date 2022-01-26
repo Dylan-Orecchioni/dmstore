@@ -5,8 +5,8 @@
 {% block body %}
     <div class="container-fluid">
         <div class="col-12 d-flex justify-content-center align-items-center">
-            {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST', 'attr': {'class': 'col-sm-10 col-md-9 col-lg-8 cardForm d-flex flex-wrap flex-column justify-content-center align-items-center py-3'}}) }}
-                <div class="py-3">
+            {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST', 'attr': {'class': 'col-sm-10 col-md-9 col-lg-10 cardForm d-flex flex-wrap justify-content-center align-items-center py-3'}}) }}
+                <div class="py-3 col-sm-10 col-md-10 col-lg-10">
                     <h3 class="text-center colortitleBlue">Inscription</h3>
                 </div>
 
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="">
+                <div>
                     <button class="btnStyle" type="submit">
                         S'inscrire
                     </button>
@@ -68,31 +68,24 @@
             
         </div>
 
-        {# <div class="border2 col-sm-12 col-md-12 col-lg-4">
-                <div class="cardForm border3">
-                    
-                        <form method="post" class="cardStyle">
-                        <h3 class="text-center colortitleBlue">Connectez-vous</h3>
-                            <div class="d-flex flex-column col-12 my-2">
-                                <label for="inputEmail" class="labelStyle">Email</label>
-                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="p-3 myRounded" autocomplete="email" required autofocus placeholder="exemple@exemple.fr">
-                            </div>
-                            <div class="d-flex flex-column col-12">
-                                <label for="inputPassword" class="labelStyle">Mot de passe</label>
-                                <input type="password" name="password" id="inputPassword" class="p-3 myRounded" autocomplete="current-password" required placeholder="Votre mot de passe...">
-                            </div>
-
-                            <input type="hidden" name="_csrf_token"
-                                value="{{ csrf_token('authenticate') }}"
-                            >
-
-                            <div class="d-flex justify-content-center align-items-end pt-3 mt-5">
-                                <button class="btnStyle" type="submit">
-                                    Se connecter
-                                </button>
-                            </div>
-                        </form>    
-                </div>  
-            </div> #}
+        <div class="col-12 d-flex justify-content-center align-items-center">             
+            <form method="post" class="col-sm-10 col-md-9 col-lg-10 cardForm d-flex flex-wrap justify-content-center align-items-center my-5">
+                <div class="py-3 col-sm-10 col-md-10 col-lg-10">
+                    <h3 class="text-center colortitleBlue">Connectez-vous</h3>
+                </div>
+                <div class="d-flex flex-column col-sm-10 col-md-9 col-lg-10 my-2">
+                    <label for="inputEmail" class="labelStyle">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="p-3 myRounded" autocomplete="email" required autofocus placeholder="exemple@exemple.fr">
+                </div>
+                <div class="d-flex flex-column col-sm-10 col-md-9 col-lg-10">
+                    <label for="inputPassword" class="labelStyle">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="p-3 myRounded" autocomplete="current-password" required placeholder="Votre mot de passe...">
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="d-flex justify-content-center align-items-end pt-3">
+                    <button class="btnStyle my-5" type="submit">Se connecter</button>
+                </div>
+            </form>     
+        </div>
     </div>
 {% endblock %}
