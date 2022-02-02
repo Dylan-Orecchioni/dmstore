@@ -36,6 +36,6 @@ final class Version20211221150453 extends AbstractMigration
         $this->addSql('ALTER TABLE content_list DROP FOREIGN KEY FK_89AA15DD9FA91286');
         $this->addSql('DROP TABLE commande');
         $this->addSql('DROP TABLE commande_list_product');
-        $this->addSql('DROP TABLE content_list');
+        $this->addSql('DROP TABLE ');
     }
 }

@@ -20,6 +20,7 @@
                         <div class="card-footer d-flex flex-column">
                             <a class="btn btn-primary" href="{{ path('product_edit',{'id' : product.id }) }}">Modifier</a>
                             <a class="btn btn-info" href="{{ path('product_show',{'id' : product.id }) }}">Voir Plus</a>
+                            {% include "admin/product/_delete_form.html.twig" %}
                         </div>
                     </div>
                 </div>
