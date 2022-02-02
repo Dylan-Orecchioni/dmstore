@@ -183,7 +183,14 @@ input
 .custom-toggler.navbar-toggler
 {
     border-color: var(--colorblue);
-} 
+}
+
+.borderSection {
+    border-bottom: solid 1px rgb(155, 155, 155);
+    width: 100%;
+    padding: 7vh 0;
+    margin-bottom: 10vh;
+}
 
 .border1 {
     border: red solid 2px;
