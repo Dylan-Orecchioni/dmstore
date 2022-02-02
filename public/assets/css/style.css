@@ -8,9 +8,19 @@
     padding: 0;
 }
 
+body {
+    background-color: var(--colorbg);
+}
+
 input 
 {
     font-family: var(--text);
+}
+
+.d-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navPad{
@@ -112,20 +122,20 @@ input
     font-weight: 500;
 }
 
-.contentStyle
-{
-    background-color: var(--colorbg);
-}
-
 .aboutImg
 {
+    max-width: 70%;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: 50%;
-    width: 30vh;
+    padding: 2vh 0;
+    
 }
 
 .text
 {
     font-family: var(--text);
+    text-align: justify;
 }
 
 

@@ -2,60 +2,63 @@
 
 {% block body %}
 
-<section class="container-fluid py-5 contentStyle">
-    <div class="row">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="col-2">
+<section class="container-fluid d-center">
+    <div class="border1 col-md-10 col-lg-12 d-center flex-wrap">
+        <div class="border2 col-lg-4 d-center my-4 ">
+            <figure class="d-center flex-column">
                 <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg">
+                <figcaption>Locaux D&MStore</figcaption>
+            </figure>
+        </div>
+        <div class="border3 col-lg-7 d-center flex-column">
+            <div>
+                <h3 class="text-center my-5 colortitleRed text-uppercase">Qui sommes-nous ?</h3>
             </div>
-            <div class="col-5 d-flex flex-column justify-content-center align-items-center ">
-                <div>
-                    <h3 class="text-center my-5 colortitleRed text-uppercase">Qui sommes-nous ?</h3>
-                </div>
-                <div class="cardStyle col-7 py-3">
-                    <p class="text m-3">
-                        Lorem ipsum dolor sit amet, consectetur elit. 
-                        Proin tincidunt rutrum sapien 
-                        Morbi laoreet mauris et
-                        urna maximus sodales. Fusce fermentum nunc 
-                        ac tincidunt egestas. 
-                        Proin sit amet erat vel nunc facilisis elementum. 
-                        Pellentesque malesuada risus vitae neque . 
-                        Sed eu lorem arcu. Nullam convallis eleifend odio.
-                    </p>
-                </div>
-            </div>  
+            <div class="border4 col-lg-10 text">
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur elit. Proin tincidunt rutrum sapien.Morbi laoreet mauris eturna maximus sodales. Fusce fermentum nunc ac tincidunt egestas. Proin sit amet erat vel nunc facilisis elementum. Pellentesque malesuada risus vitae neque . Sed eu lorem arcu. Nullam convallis eleifend odio.
+                    Lorem ipsum dolor sit amet, consectetur elit. Proin tincidunt rutrum sapien.Morbi laoreet mauris eturna maximus sodales. Fusce fermentum nunc ac tincidunt egestas. Proin sit amet erat vel nunc facilisis elementum. Pellentesque malesuada risus vitae neque . Sed eu lorem arcu. Nullam convallis eleifend odio.
+                </p>
+            </div>
+        </div>  
+    </div>
+</section>
+
+<section class="container-fluid">
+    <div class="col-lg-12 d-center justify-content-around flex-wrap">
+        <div class="col-lg-7 d-center flex-column">
+            <div>
+                <h3 class="text-center my-5 colortitleRed text-uppercase">Notre équipe</h3>
+            </div>
+            <div class="col-lg-10 text">
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur elit. Proin tincidunt rutrum sapien.Morbi laoreet mauris eturna maximus sodales. Fusce fermentum nunc ac tincidunt egestas. Proin sit amet erat vel nunc facilisis elementum. Pellentesque malesuada risus vitae neque . Sed eu lorem arcu. Nullam convallis eleifend odio.
+                </p>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur elit. Proin tincidunt rutrum sapien.Morbi laoreet mauris eturna maximus sodales. Fusce fermentum nunc ac tincidunt egestas. Proin sit amet erat vel nunc facilisis elementum. Pellentesque malesuada risus vitae neque . Sed eu lorem arcu. Nullam convallis eleifend odio.
+                </p>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur elit. Proin tincidunt rutrum sapien.Morbi laoreet mauris eturna maximus sodales. Fusce fermentum nunc ac tincidunt egestas. Proin sit amet erat vel nunc facilisis elementum. Pellentesque malesuada risus vitae neque . Sed eu lorem arcu. Nullam convallis eleifend odio.
+                </p>
+            </div>
+        </div>  
+        <div class="col-lg-4 d-center flex-column my-4">
+            <figure class="d-center flex-column">
+                <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg">
+                <figcaption>PDG</figcaption>
+            </figure>
+            <figure class="d-center flex-column">
+                <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg">
+                <figcaption>Dev Front</figcaption>
+            </figure>
+            <figure class="d-center flex-column">
+                <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg">
+                <figcaption>Dev Back</figcaption>
+            </figure>
         </div>
     </div>
 </section>
 
-<section class="container-fluid py-5 contentStyle">
-    <div class="row">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="col-5 d-flex flex-column justify-content-center align-items-center ">
-                <div>
-                    <h3 class="text-center my-5 colortitleRed text-uppercase">Notre equipe</h3>
-                </div>
-                <div class="cardStyle col-7 py-3">
-                    <p class="text m-3">
-                        Lorem ipsum dolor sit amet, consectetur elit. 
-                        Proin tincidunt rutrum sapien 
-                        Morbi laoreet mauris et
-                        urna maximus sodales. Fusce fermentum nunc 
-                        ac tincidunt egestas. 
-                        Proin sit amet erat vel nunc facilisis elementum. 
-                        Pellentesque malesuada risus vitae neque . 
-                        Sed eu lorem arcu. Nullam convallis eleifend odio.
-                    </p>
-                </div>
-            </div>  
-            <div class="col-4 d-flex flex-column">
-                <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg py-3">
-                <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg py-3">
-                <img src="{{ asset('uploads/images/architecture-g31ad81590_640.jpg') }}" alt="" class="aboutImg py-3">
-            </div>
-        </div>
-    </div>
-</section>
+
 
 {% endblock %}
