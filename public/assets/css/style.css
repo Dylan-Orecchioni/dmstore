@@ -13,6 +13,9 @@ input
     font-family: var(--text);
 }
 
+.navPad{
+    padding: 0 3vh;
+}
 
 .styleAdmin
 {

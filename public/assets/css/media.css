@@ -9,7 +9,12 @@
        align-items: center;
        flex-wrap: wrap;
        padding: 10px;
-   }    
+   }
+   
+   .column {
+       flex-direction: column;
+   }
+
 }
 
 /* ============================ 768px ============================ */
@@ -46,6 +51,11 @@
         flex-wrap: wrap;
         padding: 10px;
     } 
+
+    .navPad {
+        margin: 1.5vh 0;
+    }
+
 }
 
 /* ============================ 576px ============================ */
@@ -74,7 +84,6 @@
         justify-content: center;
         align-items: center;
     }
-
     
 }
 
@@ -97,9 +106,22 @@
     }
 
     .cardForm {
+        max-width: 80%;
         margin: 5vh;
         margin-bottom: 5vh;
         padding: 10vh;
+    }
+
+    .textArea, .form {
+        width: 90%;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .navPad {
+        margin: 1.5vh 0;
     }
 
 }

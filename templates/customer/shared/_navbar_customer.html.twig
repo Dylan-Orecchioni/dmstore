@@ -17,11 +17,11 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0 flex-wrap">
+                    <ul class="navbar-nav flex-wrap">
                         {% if app.user %}
                         
                             {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-                                <li class="nav-item">
+                                <li class="navPad">
                                     <a class="colortitleBlue" href="{{ path('admin_home') }}">Administration</a>
                                 </li>    
                             {% endif %}
@@ -31,13 +31,13 @@
                         {% for category in categoryRepository.findAll() %}
 
                             <li class="dropdown">
-                                <a class="colortitleBlue dropdownList" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="colortitleBlue navPad" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ category.name}}
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu navPad" aria-labelledby="dropdownMenuButton1">
                                     {% for tag in category.tags %}
 
-                                        <li><a class="dropdown-item" href="{{ path('customer_product_show',{'idCategory': category.id, 'idTag': tag.id }) }}">{{tag.name}}</a></li>
+                                        <li><a class="dropdown-item text-center" href="{{ path('customer_product_show',{'idCategory': category.id, 'idTag': tag.id }) }}">{{tag.name}}</a></li>
                                     
                                     {% endfor %}
                                 </ul>
@@ -45,25 +45,26 @@
                             
                         {% endfor %}
        
-                        <li class="nav-item">
+                        <li class="navPad">
                             <a class="colortitleBlue" href="{{ path('a_propos') }}">A propos</a>
                         </li>    
-                        <li class="nav-item">
+                        <li class="navPad">
                             <a class="colortitleBlue" href="{{ path('customer_contact') }}">Contact</a>
                         </li>
 
                         {% if app.user %}                      
-                            <li class="nav-item">
+                            <li class="navPad">
                                 <a class="colortitleBlue" href="{{ path('app_logout') }}">Se déconnecter</a>
                             </li>  
                         {% else %}
 
-                        <li class="nav-item">
+                        <li class="navPad">
                             <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
                         </li>
+
                         {% endif %}
 
-                        <li class="nav-item me-3">
+                        <li class="navPad me-3">
                             <a href="{{ path('cart_detail') }}"><i class="fas fa-shopping-cart"></i></a>
                         </li>
                     </ul>            

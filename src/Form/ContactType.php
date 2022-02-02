@@ -27,7 +27,7 @@ class ContactType extends AbstractType
             ->add('subject',TextType::class,[
                 'required' => false,
                 'label' => 'Sujet du message',
-                'attr' => array('placeholder' => 'Tapez votre mot de passe...'),
+                'attr' => array('placeholder' => 'Sujet...'),
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Vous devez renseigner le sujet de votre message.'
