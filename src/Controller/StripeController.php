@@ -30,8 +30,6 @@ class StripeController extends AbstractController
         /** @var User $user */
         $user = $this->getUser();
 
-        $commandeService->create($user);
-
         Stripe::setApiKey('sk_test_51IBjOmJxItuCvN48kVDdR9Tg52Npf4IJydX0TFxyioJFxo5vdlObzoYYTmiVZ2BD2XqGQkvsWaj8UNNzEz3ekgMo00jPcW004c');
 
         $domain = 'http://127.0.0.1:8000';
@@ -93,10 +91,13 @@ class StripeController extends AbstractController
     /**
      * @Route("/paiementreussi", name="payment_success")
      */
-    public function paymentSuccess(CartService $cartService,EntityManagerInterface $em, MailerService $mailerService, CommandeRepository $commandeRepository)
+    public function paymentSuccess(CommandeService $commandeService ,CartService $cartService,EntityManagerInterface $em, MailerService $mailerService, CommandeRepository $commandeRepository)
     {
         /** @var User $user */
         $user = $this->getUser();
+
+        $commandeService->create($user);
+
 
         $commande = $commandeRepository->findOneBy([
             'user' => $user,

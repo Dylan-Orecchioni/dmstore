@@ -57,8 +57,10 @@ class MailerService
                     'date' => $commande->getDate(),
                     'contents' => $commande->getCommandeListProduct()->getContentLists(),
 
+
                 ])
             ;
+
         $this->mailer->send($email);
     }
 }    

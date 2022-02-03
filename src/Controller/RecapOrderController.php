@@ -17,8 +17,7 @@ class RecapOrderController extends AbstractController
     /**
      * @Route("customer/recap/order",name="recap_order")
      */
-    public function recap(CartService $cartService,Request $request,
-                            EntityManagerInterface $em)
+    public function recap(CartService $cartService,Request $request, EntityManagerInterface $em)
     {
         $detailCart = $cartService->getDetailedCartItems();
         

@@ -43,19 +43,21 @@ class CommandeService
     {
         $commandListProduct = new CommandeListProduct();
         $commandListProduct->setCommande($commande);
-        $this->em->persist($commandListProduct);
-
+        
         /** @var CartRealProduct $detailcart */
         $detailcart = $this->cartService->getDetailedCartItems();
-
+        
         foreach ($detailcart as $items) 
         {
             $contentList = new ContentList();
-            $contentList->setProduct($items->getProduct());
+            $contentList->addProduct($items->getProduct());
             $contentList->setListProduct($commandListProduct);
             $contentList->setQty($items->getQty());
+            $commandListProduct->addContentList($contentList);
             $this->em->persist($contentList);
-
+            
         }
+        $commande->setCommandeListProduct($commandListProduct);
+        $this->em->persist($commandListProduct);
     }
 }

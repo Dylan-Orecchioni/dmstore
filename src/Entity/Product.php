@@ -59,13 +59,14 @@ class Product
     private $tag;
 
     /**
-     * @ORM\OneToMany(targetEntity=ContentList::class, mappedBy="product")
+     * @ORM\ManyToOne(targetEntity=ContentList::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $contentLists;
+    private $contentList;
 
     public function __construct()
     {
-        $this->contentLists = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -157,32 +158,14 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection|ContentList[]
-     */
-    public function getContentLists(): Collection
+    public function getContentList(): ?ContentList
     {
-        return $this->contentLists;
+        return $this->contentList;
     }
 
-    public function addContentList(ContentList $contentList): self
+    public function setContentList(?ContentList $contentList): self
     {
-        if (!$this->contentLists->contains($contentList)) {
-            $this->contentLists[] = $contentList;
-            $contentList->setProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeContentList(ContentList $contentList): self
-    {
-        if ($this->contentLists->removeElement($contentList)) {
-            // set the owning side to null (unless already changed)
-            if ($contentList->getProduct() === $this) {
-                $contentList->setProduct(null);
-            }
-        }
+        $this->contentList = $contentList;
 
         return $this;
     }
