@@ -13,7 +13,7 @@ class CustomerProductController extends AbstractController
     /**
      * @Route("customer/product/{id}", name="product_show_detail")
      */
-    public function show(int $id,ProductRepository $productRepository)
+    public function show(int $id, ProductRepository $productRepository)
     {
         $product = $productRepository->find($id);
 
@@ -25,6 +25,8 @@ class CustomerProductController extends AbstractController
         return $this->render("customer/product_show_detail.html.twig",[
             'product' => $product
         ]);
+
+        
         
     }
 
@@ -48,9 +50,10 @@ class CustomerProductController extends AbstractController
             'category' => $category
         ]);
 
+        
         return $this->render("customer/product_show_all.html.twig",[
-            'products' => $products
-        ]);
-
+            'products' => $products,
+            'category' => $category,
+            'tag'      => $tag           ]);
     }
 }
