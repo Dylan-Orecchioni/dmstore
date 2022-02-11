@@ -28,28 +28,24 @@
         </thead>
         <tbody>
             {% for content in contents %}
-                {# {% for list in content.listProduct.commande.commandeListProduct.contentLists %} #}
-                    {% for product in content.products %}
-                
-                        <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-column align-items-center justify-content-center">
-                                        <p>{{ product.name }}</p>
-                                    </div>
+                {% for product in content.products %}
+            
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-column align-items-center justify-content-center">
+                                    <p>{{ product.name }}</p>
                                 </div>
-                            </td>
-                            <td>{{ product.price | euroPrice }}</td>
-                            <td>
-                                <button class="btn btn-light">{{ content.qty }}</button>
-                            </td>
-                            <td>{{ ( content.qty * product.price ) | euroPrice }}</td>
-                        </tr>
-                        
-                        
-
-                    {% endfor %}
-                {# {% endfor %} #}
+                            </div>
+                        </td>
+                        <td>{{ product.price | euroPrice }}</td>
+                        <td>
+                            <button class="btn btn-light">{{ content.qty }}</button>
+                        </td>
+                        <td>{{ ( content.qty * product.price ) | euroPrice }}</td>
+                    </tr>
+                    
+                {% endfor %}
             {% endfor %}
             <tr>
                 <th colspan="2"></th>
