@@ -2,14 +2,14 @@
 
 {% block body %}
 
-    <div class="container d-center flex-column mb-5">
+    <div class="  container d-center flex-column mb-5">
         <div class=" col-sm-12 col-md-10 col-lg-12 my-2 d-center">
             <h1 class="text-center py-5 colortitleRed">{{ tag.name }} - {{ category.name }}</h1>
         </div>
         <div class=" d-center justify-content-start col-sm-12 col-md-10 col-lg-12 flex-wrap">
             {% for product in products %}
-                    <div class="col-sm-12 col-md-12 col-lg-4 mt-3 d-center">
-                        <div class="card col-sm-7 col-md-8 col-lg-10">
+                    <div class="  col-sm-12 col-md-12 col-lg-4 mt-3 d-center">
+                        <div class=" card col-sm-7 col-md-8 col-lg-10">
                             <div class="card-header">
                                 <img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top" style="height: 30vh;">
                             </div>

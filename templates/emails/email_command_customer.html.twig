@@ -28,13 +28,12 @@
         </thead>
         <tbody>
             {% for content in contents %}
-                {% for list in content.listProduct.commande.commandeListProduct.contentLists %}
-                    {% for product in list.products %}
+                {# {% for list in content.listProduct.commande.commandeListProduct.contentLists %} #}
+                    {% for product in content.products %}
                 
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="{{product.imagePath}}" alt="" class="imageProductCart">
                                     <div class="d-flex flex-column align-items-center justify-content-center">
                                         <p>{{ product.name }}</p>
                                     </div>
@@ -44,12 +43,14 @@
                             <td>
                                 <button class="btn btn-light">{{ content.qty }}</button>
                             </td>
-                            <td>{{ total | euroPrice }}</td>
+                            <td>{{ ( content.qty * product.price ) | euroPrice }}</td>
                         </tr>
+                        
+                        
 
                     {% endfor %}
-                {% endfor %}
-            {% endfor%}
+                {# {% endfor %} #}
+            {% endfor %}
             <tr>
                 <th colspan="2"></th>
                 <th><strong>Sous Total</strong></th>

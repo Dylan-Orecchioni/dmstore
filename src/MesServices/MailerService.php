@@ -40,7 +40,7 @@ class MailerService
         $this->mailer->send($email);
     }
 
-    public function sendCommandMail(Commande $commande, User $user)
+    public function sendCommandMail(Commande $commande, User $user, )
     {
         $email = (new TemplatedEmail())
                 ->from('contact@dmstore.com')
@@ -57,10 +57,10 @@ class MailerService
                     'date' => $commande->getDate(),
                     'contents' => $commande->getCommandeListProduct()->getContentLists(),
 
-
                 ])
             ;
 
         $this->mailer->send($email);
+        
     }
 }    
