@@ -205,6 +205,18 @@ input
 
 }
 
+.titleCarousel {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 35%;;
+    color: #f8f8f8;
+}
+
+.imgCaroussel {
+    filter: brightness(0.5);
+}
+
 .border1 {
     border: red solid 2px;
 }
