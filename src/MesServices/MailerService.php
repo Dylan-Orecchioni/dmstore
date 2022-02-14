@@ -2,7 +2,6 @@
 
 namespace App\MesServices;
 
-use DateTime;
 use App\Entity\User;
 use App\Entity\Commande;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -31,9 +30,7 @@ class MailerService
                 ->context([
                     'subject' => $data['subject'],
                     'content' => $data['content'],
-                    'fullname' => $data['fullname'],
                     'email_customer' => $data['email'],
-                    'telephone' => $data['telephone']
                 ])
             ;
 

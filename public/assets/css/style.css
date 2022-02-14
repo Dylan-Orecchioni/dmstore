@@ -17,6 +17,32 @@ input
     font-family: var(--text);
 }
 
+.sectionHome1 {
+    color: white;
+    z-index: 1;
+    position: absolute;
+}
+
+.imgHeader {
+    filter: brightness(0.5);
+    position: relative;
+}
+
+.titleHeader {
+    top: 40vh;
+    font-size: 12vh;
+}
+.textHeader {
+    text-align: justify;
+    top: 70vh;
+    font-size: 5vh;
+}
+
+.sloganHeader {
+    top: 120vh;
+    font-size: 10vh;
+}
+
 .d-center {
     display: flex;
     justify-content: center;
