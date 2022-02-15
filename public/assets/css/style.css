@@ -17,30 +17,32 @@ input
     font-family: var(--text);
 }
 
-.sectionHome1 {
+.section1 {
+    background-image: url('../../uploads/images/team.png');
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+}
+
+.textHome1 {
     color: white;
     z-index: 1;
-    position: absolute;
+    text-align: center;
 }
 
-.imgHeader {
-    filter: brightness(0.5);
-    position: relative;
-}
-
-.titleHeader {
-    top: 40vh;
-    font-size: 12vh;
-}
-.textHeader {
-    text-align: justify;
-    top: 70vh;
-    font-size: 5vh;
-}
-
-.sloganHeader {
-    top: 120vh;
+.titleSize {
     font-size: 10vh;
+    
+}
+
+.textSize {
+    font-size: 4vh;
+    text-align: justify;
+}
+
+.sloganSize {
+    font-size: 8vh;
 }
 
 .d-center {
@@ -245,14 +247,18 @@ input
 
 .border1 {
     border: red solid 2px;
+    /* background-color: red; */
 }
 .border2 {
     border: green solid 2px;
+    /* background-color: green; */
 }
 .border3 {
     border: blue solid 2px;
+    /* background-color: blue; */
 }
 .border4 {
     border: orange solid 2px;
+    /* background-color: orange; */
 }
 

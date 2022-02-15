@@ -1,75 +1,81 @@
-<nav class="navbar navbar-expand-lg navbar-light styleUser">
-    <div class="container-fluid">
-        <div class="col-12 d-center justify-content-between flex-wrap">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light styleUser">
+        <div class="container-fluid">
+            <div class="col-12 d-center justify-content-between flex-wrap">
 
 
-            <div class="col-lg-2 col-md-9 col-sm-9 logo">
-                    <a class="navbar-brand" href="{{ path('home') }}">
-                        <img src="{{ asset('uploads/images/logo.png') }}" alt="Logo">
-                    </a>
-            </div>
-
-
-            <div class="col-lg-10 col-md-3 col-sm-3 ">    
-                <div class="col-lg-12 col-md-12 col-sm-12 burger">
-                    <button class="custom-toggler navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon "></span>
-                    </button>
+                <div class="col-lg-2 col-md-9 col-sm-9 logo">
+                        <a class="navbar-brand" href="{{ path('home') }}">
+                            <img src="{{ asset('uploads/images/logo.png') }}" alt="Logo">
+                        </a>
                 </div>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav flex-wrap">
-                        {% if app.user %}
-                        
-                            {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-                                <li class="navPad">
-                                    <a class="colortitleBlue" href="{{ path('admin_home') }}">Administration</a>
-                                </li>    
+
+
+                <div class="col-lg-10 col-md-3 col-sm-3 col-3">    
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-8 burger">
+                        <button class="custom-toggler navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon "></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav flex-wrap">
+                            {% if app.user %}
+                            
+                                {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+                                    <li class="navPad">
+                                        <a class="colortitleBlue" href="{{ path('admin_home') }}">Administration</a>
+                                    </li>    
+                                {% endif %}
+
                             {% endif %}
 
-                        {% endif %}
+                            {% for category in categoryRepository.findAll() %}
 
-                        {% for category in categoryRepository.findAll() %}
+                                <li class="dropdown">
+                                    <a class="colortitleBlue navPad" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ category.name}}
+                                    </a>
+                                    <ul class="dropdown-menu navPad" aria-labelledby="dropdownMenuButton1">
+                                        {% for tag in category.tags %}
 
-                            <li class="dropdown">
-                                <a class="colortitleBlue navPad" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ category.name}}
-                                </a>
-                                <ul class="dropdown-menu navPad" aria-labelledby="dropdownMenuButton1">
-                                    {% for tag in category.tags %}
-
-                                        <li><a class="dropdown-item text-center" href="{{ path('customer_product_show',{'idCategory': category.id, 'idTag': tag.id }) }}">{{tag.name}}</a></li>
-                                    
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            
-                        {% endfor %}
-       
-                        <li class="navPad">
-                            <a class="colortitleBlue" href="{{ path('a_propos') }}">A propos</a>
-                        </li>    
-                        <li class="navPad">
-                            <a class="colortitleBlue" href="{{ path('customer_contact') }}">Contact</a>
-                        </li>
-
-                        {% if app.user %}                      
+                                            <li><a 
+                                            class="dropdown-item text-center" 
+                                            href="{{ path('customer_product_show',{'idCategory': category.id, 'idTag': tag.id }) }}">
+                                            {{tag.name}}
+                                            </a></li>
+                                        
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                
+                            {% endfor %}
+        
                             <li class="navPad">
-                                <a class="colortitleBlue" href="{{ path('app_logout') }}">Se déconnecter</a>
-                            </li>  
-                        {% else %}
+                                <a class="colortitleBlue" href="{{ path('a_propos') }}">A propos</a>
+                            </li>    
+                            <li class="navPad">
+                                <a class="colortitleBlue" href="{{ path('customer_contact') }}">Contact</a>
+                            </li>
 
-                        <li class="navPad">
-                            <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
-                        </li>
+                            {% if app.user %}                      
+                                <li class="navPad">
+                                    <a class="colortitleBlue" href="{{ path('app_logout') }}">Se déconnecter</a>
+                                </li>  
+                            {% else %}
 
-                        {% endif %}
+                            <li class="navPad">
+                                <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
+                            </li>
 
-                        <li class="navPad me-3">
-                            <a href="{{ path('cart_detail') }}"><i class="fas fa-shopping-cart"></i></a>
-                        </li>
-                    </ul>            
-                </div>
-            </div>  
+                            {% endif %}
+
+                            <li class="navPad me-3">
+                                <a href="{{ path('cart_detail') }}"><i class="fas fa-shopping-cart"></i></a>
+                            </li>
+                        </ul>            
+                    </div>
+                </div>  
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>

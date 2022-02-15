@@ -1,17 +1,30 @@
 {% extends "customer/base.html.twig" %}
 
 {% block body %}
-<header class="d-center col-sm-12 col-md-12 col-lg-12">
-    <h1 class="titleHeader sectionHome1 border1 col-lg-12 text-center">Bienvenue sur D&Mstore !</h1>
-    <div>
-        <img class="col-lg-12 imgHeader" src="{{ asset('uploads/images/team.jpg') }}" alt="">
-    </div>
-    <p class="textHeader sectionHome1 col-lg-6 border3">
-    Venez découvrir notre gamme de produits sportifs spécialement dédié au ballon ovale !
-    En passant d'une paire de chaussure aux casques, D&M store vous propose une large gamme de produit pour 
-    votre sport préféré.
-    N'attendez plus.
-    </p>
-    <p class="border2 col-lg-12 sloganHeader sectionHome1 text-center">Vous êtes votre seule limite !</p>
-</header>
+    {# Section Image d'accueil #}
+
+    <section class="section1 d-center justify-content-around flex-wrap flex-column col-sm-12 col-md-12 col-lg-12">
+        <h1 class="textHome1 titleSize  col-sm-10 col-md-10 col-lg-10">Bienvenue sur D&Mstore !</h1>
+        <p class="textHome1 textSize  col-sm-10 col-md-10 col-lg-10">
+        Venez découvrir notre gamme de produits sportifs spécialement dédié au ballon ovale !
+        En passant d'une paire de chaussure aux casques, D&M store vous propose une large gamme de produit pour 
+        votre sport préféré.
+        N'attendez plus.
+        </p>
+        <p class="textHome1 sloganSize  col-sm-10 col-md-10 col-lg-10">Vous êtes votre seule limite !</p>
+    </section>
+
+    {# Section Produit Phare #}
+
+    <section>
+        <h3 class="text-center col-12 col-sm-12 col-md-12 col-lg-12">Produits phare</h3>
+        <div>
+            <div>
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
 {% endblock %}

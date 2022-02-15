@@ -124,5 +124,16 @@
         margin: 1.5vh 0;
     }
 
+    .titleSize {
+        font-size: 6vh !important;
+    }
+    .sloganSize {
+        font-size: 6vh !important;
+    }
+    .textSize {
+        font-size: 3vh !important;
+        width: 80%;
+    }
+
 }
 
