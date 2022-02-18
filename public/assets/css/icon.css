@@ -2,6 +2,11 @@
 {
     color: var(--colorred);
 }
+.fas2
+{
+    color: var(--colorblue);
+}
+
 .fab
 {
     color: var(--colorblue);

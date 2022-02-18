@@ -167,6 +167,11 @@ input
     padding: 2vh 0;
     
 }
+.imgProduct
+{
+    max-width: 20vw;
+    max-height: 20vw;   
+}
 
 .text
 {
