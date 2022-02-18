@@ -4,69 +4,6 @@
 
 {% block body %}
     <div class="container-fluid">
-        <div class="col-12 d-center">
-            {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST', 'attr': {'class': 'col-sm-10 col-md-9 col-lg-10 cardForm d-flex flex-wrap justify-content-center align-items-center py-3'}}) }}
-                <div class="py-3 col-sm-10 col-md-10 col-lg-10">
-                    <h3 class="text-center colortitleBlue">Inscription</h3>
-                </div>
-
-                <div class="wrap text-center d-center justify-content-around col-sm-10 col-md-10 col-lg-10">
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Email</label>                                 
-                        {{ form_widget(registrationForm.email, {'attr': {'class': 'mx-2 myRounded'}}) }}
-                    </div>
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Mot de passe</label>                                 
-                        {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'mx-2 myRounded'}}) }} 
-                    </div>                                                                                                           
-                </div>
-
-                <div class="wrap text-center d-center justify-content-around col-sm-10 col-md-10 col-lg-10">
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Prenom</label>                                 
-                        {{ form_widget(registrationForm.firstname, {'attr': {'class': 'mx-2 myRounded'}}) }}
-                    </div>
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Nom</label>                                 
-                        {{ form_widget(registrationForm.lastname, {'attr': {'class': 'mx-2 myRounded'}}) }}
-                    </div>
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Age</label>                                 
-                        {{ form_widget(registrationForm.age, {'attr': {'class': 'mx-2 myRounded'}}) }}
-                    </div>
-                </div>
-
-                <div class="wrap text-center d-center justify-content-around col-sm-10 col-md-10 col-lg-10">
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Date de naissance</label>                                 
-                        {{ form_widget(registrationForm.dateofbirth, {'attr': {'class': 'myRounded'}}) }}                                  
-                    </div>
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Adresse</label>
-                        {{ form_widget(registrationForm.adress, {'attr': {'class': ' myRounded'}}) }}
-                    </div>
-                </div>
-
-                <div class="wrap text-center d-center justify-content-around col-sm-10 col-md-10 col-lg-10">
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">CP</label>
-                        {{ form_widget(registrationForm.cp, {'attr': {'class': 'myRounded'}}) }}
-                    </div>
-                    <div class="wrap">
-                        <label for="inputEmail" class="labelStyle">Ville</label>
-                        {{ form_widget(registrationForm.city, {'attr': {'class': ' myRounded'}}) }}
-                    </div>
-                </div>
-
-                <div>
-                    <button class="btnStyle" type="submit">
-                        S'inscrire
-                    </button>
-                </div>
-
-            {{ form_end(registrationForm) }}
-            
-        </div>
 
         <div class="col-12 d-center">             
             <form method="post" class="col-sm-10 col-md-9 col-lg-10 cardForm d-center flex-wrap my-5">

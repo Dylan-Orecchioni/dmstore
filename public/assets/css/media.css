@@ -1,22 +1,5 @@
 /* ============================ 991px ============================ */
 
-@media screen and (max-width: 991px) 
-{
-   .wrap {
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       flex-wrap: wrap;
-       padding: 10px;
-   }
-   
-   .column {
-       flex-direction: column;
-   }
-
-}
-
 /* ============================ 768px ============================ */
 
 @media only screen and (min-width: 768px) 
@@ -44,17 +27,11 @@
         align-items: center;
     }
 
-    .wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 10px;
-    } 
-
     .navPad {
         margin: 1.5vh 0;
     }
+
+    
 
 }
 
@@ -96,28 +73,18 @@
         align-items: center;
     }
     
-    .wrap {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 10px;
-        margin: 10px;
+    .btnStyle {
+        padding: 3vh 5vh !important;
     }
 
     .cardForm {
         max-width: 80%;
         margin: 5vh;
-        padding: 10vh;
+        padding: 5vh;
     }
 
     .textArea, .form {
         width: 90%;
-    }
-
-    .column {
-        flex-direction: column;
     }
 
     .navPad {
@@ -127,13 +94,12 @@
     .titleSize {
         font-size: 6vh !important;
     }
-    .sloganSize {
-        font-size: 6vh !important;
-    }
     .textSize {
         font-size: 3vh !important;
-        width: 80%;
     }
 
+    .sloganSize {
+        font-size: 4vh !important;
+    }
 }
 

@@ -2,19 +2,19 @@
 
 {% block body %}
 
-    <div class="  container d-center flex-column pb-5 mb-5">
+    <div class="container d-center flex-column pb-5 mb-5">
         <div class="col-sm-12 col-md-10 col-lg-12 my-2 d-center">
             <h1 class="text-center py-5 colortitleRed">{{ tag.name }} - {{ category.name }}</h1>
         </div>
-        <div class=" d-center justify-content-start col-sm-12 col-md-10 col-lg-12 flex-wrap">
+        <div class="d-center justify-content-around col-12 col-md-12 col-lg-12 flex-wrap">
             {% for product in products %}
-                    <div class="col-sm-12 col-md-12 col-lg-4 mt-3 d-center">
-                        <div class="card cardProduct col-sm-7 col-md-8 col-lg-7 mb-5 ">
+                    <div class="col-7 col-md-5 col-lg-5 mt-3 d-center">
+                        <div class="card cardProduct col-7">
                             <div class="card-body">
                                 <figure>
                                     <a href="{{ path('product_show_detail',{'id' : product.id }) }}"><img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top" style="height: 30vh;"></a>
                                 </figure>
-                            <figcaption class="text-capitalize text-center d-center fw-light caption">{{ product.name }}</figcaption>
+                                <figcaption class="text-capitalize text-center d-center fw-light caption">{{ product.name }}</figcaption>
                             </div>
                         </div>
                     </div>

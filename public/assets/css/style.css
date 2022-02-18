@@ -32,7 +32,7 @@ input
 }
 
 .titleSize {
-    font-size: 10vh;
+    font-size: 8vh;
     
 }
 
@@ -42,13 +42,17 @@ input
 }
 
 .sloganSize {
-    font-size: 8vh;
+    font-size: 6vh;
 }
 
 .d-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.column{
+    flex-direction: column;
 }
 
 .navPad{
