@@ -23,7 +23,7 @@
                             
                                 {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
                                     <li class="navPad">
-                                        <a class="colortitleBlue" href="{{ path('admin_home') }}">Administration</a>
+                                        <a class="colortitleBlue fw-bold" href="{{ path('admin_home') }}">Administration</a>
                                     </li>    
                                 {% endif %}
 
@@ -32,7 +32,7 @@
                             {% for category in categoryRepository.findAll() %}
 
                                 <li class="dropdown">
-                                    <a class="colortitleBlue navPad" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="colortitleBlue fw-bold navPad" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ category.name}}
                                     </a>
                                     <ul class="dropdown-menu navPad" aria-labelledby="dropdownMenuButton1">
@@ -51,20 +51,20 @@
                             {% endfor %}
         
                             <li class="navPad">
-                                <a class="colortitleBlue" href="{{ path('about') }}">A propos</a>
+                                <a class="colortitleBlue fw-bold" href="{{ path('about') }}">A propos</a>
                             </li>    
                             <li class="navPad">
-                                <a class="colortitleBlue" href="{{ path('customer_contact') }}">Contact</a>
+                                <a class="colortitleBlue fw-bold" href="{{ path('customer_contact') }}">Contact</a>
                             </li>
 
                             {% if app.user %}                      
                                 <li class="navPad">
-                                    <a class="colortitleBlue" href="{{ path('app_logout') }}">Se déconnecter</a>
+                                    <a class="colortitleBlue fw-bold" href="{{ path('app_logout') }}">Se déconnecter</a>
                                 </li>  
                             {% else %}
 
                             <li class="navPad">
-                                <a class="colortitleBlue" href="{{ path('app_login') }}">Login</a>
+                                <a class="colortitleBlue fw-bold" href="{{ path('app_login') }}">Login</a>
                             </li>
 
                             {% endif %}

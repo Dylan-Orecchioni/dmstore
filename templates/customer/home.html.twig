@@ -4,8 +4,8 @@
     {# Section Image d'accueil #}
 
     <section class="section1 d-center justify-content-around flex-wrap flex-column col-12">
-        <h1 class="textHome1 titleSize col-10 ">Bienvenue sur D&Mstore !</h1>
-        <p class="textHome1 textSize col-10 ">
+        <h1 class="textHome1 titleSize fontTitle col-10 ">Bienvenue sur D&Mstore !</h1>
+        <p class="textHome1 textSize fontText col-10 ">
         Venez découvrir notre gamme de produits sportifs spécialement dédié au ballon ovale !
         En passant d'une paire de chaussure aux casques, D&M store vous propose une large gamme de produit pour 
         votre sport préféré.
@@ -21,9 +21,9 @@
             <h2 class="colortitleRed text-center my-5 col-12 col-sm-4 col-md-4 col-lg-4">Produits phare</h3>
             <div class=" py-3 d-center justify-content-around flex-wrap col-12 col-sm-10 col-md-12 col-lg-12">
             {% for i in 0..2 %}  
-                <div class="card d-center flex-column my-3 col-10 col-sm-7 col-md-3 col-lg-3">
-                    <figure class"">
-                        <a href=""><img src="{{ asset('uploads/images/team.png') }}" alt="" class="card-img-top imgHomeProduct"></a>
+                <div class="card d-center flex-column my-3 col-7 col-md-3 col-lg-2" >
+                    <figure class="">
+                        <a href=""><img src="{{ products[i].imagePath }}" alt="" class="card-img-top" style="height: 250px; max-width: auto;"></a>
                         <figcaption class="text-center pt-3 colortitleRed">{{products[i].name}}</figcaption>
                     </figure>
                 </div>
@@ -33,12 +33,13 @@
     </section>
 
     {# Section Formulaire inscription #}
+    
     <section >
         <div class="container-fluid ">
             <div class="col-12 d-center justify-content-around flex-wrap py-5">
                 <div class="d-center flex-column justify-content-around col-12 col-md-10 col-lg-5">
-                    <h2 class=" col-11 text-center colortitleBlue fs-1 uppercase my-3">Inscrivez-vous !</h2>
-                    <p class="col-10 col-sm-7 col-md-5 col-lg-6 colortitleBlue my-5 fs-3">Rejoignez D&M Store en vous inscrivant et recevez directement dans votre boîte mail des offres exclusifs !</p>
+                    <h2 class=" col-11 text-center colortitleBlue fs-1 my-3">Inscrivez-vous !</h2>
+                    <p class="col-10 col-sm-7 col-md-5 col-lg-6 colortitleBlue fontText my-5 fs-3">Rejoignez D&M Store en vous inscrivant et recevez directement dans votre boîte mail des offres exclusifs !</p>
                 </div>
                 {{ form_start(registrationForm, {'action': path('register_user'), 'method': 'POST', 'attr': {'class': 'col-8 col-sm-8 col-lg-6 cardForm d-center flex-wrap'}}) }}
                     <div class=" d-center col-12 py-3">
