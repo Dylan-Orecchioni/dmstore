@@ -9,12 +9,12 @@
         <div class="d-center col-12 flex-wrap">
             {% for product in products %}
                     <div class="col-7 col-md-4 col-lg-4 mt-3 d-center justify-content-around">
-                        <div class="card cardProduct d-center flex-column my-3 col-12 col-md-10 ">
+                        <div class="card cardProduct d-center flex-column my-3 col-12 col-md-10 col-lg-8 ">
                             <div class="card-body">
                                 <figure>
-                                    <a href="{{ path('product_show_detail',{'id' : product.id }) }}"><img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top" style="height: 250px; max-width: auto;"></a>
-                                    <figcaption class="text-capitalize text-center d-center fw-light caption">{{ product.name }}</figcaption>
+                                    <a href="{{ path('product_show_detail',{'id' : product.id }) }}"><img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top" style="height: 250px; max-width: 100%;"></a>
                                 </figure>
+                                <figcaption class="text-capitalize text-center d-center fw-light caption">{{ product.name }}</figcaption>
                             </div>
                         </div>
                     </div>
