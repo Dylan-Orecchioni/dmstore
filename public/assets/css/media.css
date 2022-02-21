@@ -28,7 +28,7 @@
     }
 
     .navPad {
-        margin: 1.5vh 0;
+        margin: 1vh 0;
     }
 
     
@@ -74,7 +74,7 @@
     }
     
     .btnStyle {
-        padding: 3vh 5vh !important;
+        padding: 2vh 5vh !important;
     }
 
     .cardForm {
@@ -89,6 +89,7 @@
 
     .navPad {
         margin: 1.5vh 0;
+        padding: 0 !important;
     }
 
     .titleSize {
@@ -100,6 +101,12 @@
 
     .sloganSize {
         font-size: 4vh !important;
+    }
+
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

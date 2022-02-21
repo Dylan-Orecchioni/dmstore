@@ -47,6 +47,11 @@ class CartController extends AbstractController
 
         $total = $cartService->getTotal();
 
+        if (!$detailCart) {
+
+            $this->addFlash('warning', "Votre panier est vide. Veuillez ajouter des produits afin de valider le paiement.");
+        }
+
         return $this->render("customer/detail_cart.html.twig",[
             'detailCart' => $detailCart,
             'totalCart' => $total

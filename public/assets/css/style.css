@@ -36,7 +36,7 @@ input
 }
 
 .textSize {
-    font-size: 4vh;
+    font-size: 3vh;
     text-align: justify;
 }
 
@@ -55,7 +55,7 @@ input
 }
 
 .navPad{
-    padding: 0 3vh;
+    padding: 0vh 2vh;
 }
 
 .styleAdmin
@@ -130,7 +130,7 @@ input
 .btnStyle
 {
     margin: 2vh;
-    padding: 3vh 10vh;
+    padding: 2vh 7vh;
     border-radius: 5vh;
     border: transparent;
     color: var(--colorbg);

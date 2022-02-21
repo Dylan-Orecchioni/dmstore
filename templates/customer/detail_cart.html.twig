@@ -3,6 +3,10 @@
 {% block body %}
 
 <div class="container">
+
+    <div class="col-12 mt-3">
+        {% include "customer/shared/_messages_flash.html.twig" %}
+    </div>
     <div class="col-12 d-center flex-column">
         <div class="d-center">
             <h3 class="fontTitle colortitleRed ">Mon panier</h3>
@@ -40,12 +44,17 @@
                         </tr>
                     {% endfor%}
                         <tr>
-                            <th colspan="2"></th>
-                            <th class="colortitleBlue fontText"><strong>Sous Total</strong></th>
-                            <th class="colortitleRed fontText"><strong>{{ totalCart | euroPrice }}</strong></th>
+                            <th colspan="3"></th>
+                            <th class="text-center colortitleBlue fontText"><strong>Sous Total</strong></th>
+                            <th class="text-center colortitleRed fontText"><strong>{{ totalCart | euroPrice }}</strong></th>
                         </tr>
                 </tbody>
             </table>
+            {% if detailCart is not empty %}
+                <div>
+                    <a href="{{ path('recap_order')}}" class="btn btnStyle">Valider</a>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
