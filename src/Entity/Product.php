@@ -64,10 +64,6 @@ class Product
      */
     private $contentList;
 
-    public function __construct()
-    {
-
-    }
 
     public function getId(): ?int
     {

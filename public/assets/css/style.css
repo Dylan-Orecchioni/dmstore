@@ -17,6 +17,10 @@ input
     font-family: var(--text);
 }
 
+a:hover {
+    color: var(--colorred);
+}
+
 .section1 {
     background-image: url('../../uploads/images/team.png');
     background-size: cover;
