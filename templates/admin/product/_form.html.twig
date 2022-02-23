@@ -1,4 +1,39 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="container">
+        <div class="col-12 d-center">
+            <div class="card col-12 col-lg-6 d-center my-5">
+                <div class="card-body">
+                    {{ form_start(form, {'attr': {'class': 'd-center column flex-wrap'}}) }}
+                        <div class="d-center column my-3">
+                            <label for="" class="labelStyle h4 py-2">Choisir le nom du produit</label>
+                            {{ form_widget(form.name,{'attr': {'class': 'col-9 myRounded'}}) }}
+                        </div>
+                        <div class="d-center column my-3">
+                            <label for="" class="labelStyle h4 py-2">Taille</label>
+                            {{ form_widget(form.size) }}
+                        </div>
+                        <div class="d-center column my-3">
+                            <label for="" class="labelStyle h4 py-2">Prix</label>
+                            {{ form_widget(form.price) }}
+                        </div>
+                        <div class="d-center column my-3">
+                            <label for="" class="labelStyle h4 py-2">Description</label>
+                            {{ form_widget(form.description) }}
+                        </div>
+                        <div class="d-center column my-3">
+                            <label for="" class="labelStyle h4 py-2">Pièce jointe</label>
+                            {{ form_widget(form.file) }}
+                        </div>
+                        <div class="d-center column my-3">
+                            <label for="" class="labelStyle h4 py-2">Tag</label>
+                            {{ form_widget(form.tag) }}
+                        </div>
+                    <div class="my-5">
+                        <button class="btn btnBlue" type="submit">{{ button_label|default('Enregistrer') }}</button>
+                        <a class="btn btnRed" href="{{ path('product_index') }}">Retour</a>
+                        {{ form_end(form) }} 
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+

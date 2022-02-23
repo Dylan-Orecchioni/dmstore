@@ -1,6 +1,7 @@
 @import url(root.css);
 @import url(media.css);
 @import url(icon.css);
+@import url(admin.css);
 
 * {
     margin: 0;
@@ -62,13 +63,6 @@ a:hover {
     padding: 0vh 2vh;
 }
 
-.styleAdmin
-{
-    height: 13vh;
-    background-color: var(--navbarAdmin);
-    
-}
-
 .styleUser
 {
     background-color: var(--colorbg);
@@ -81,13 +75,7 @@ a:hover {
     color: var(--colorred);
     font-weight: normal;
 }
-.colorAdmin
-{
-    text-decoration: none;
-    font-family: var(--title);
-    color: var(--colorbg);
-    font-weight: bold;
-}
+
 .colortitleBlue
 {
     text-decoration: none;

@@ -2,9 +2,24 @@
 {
     color: var(--colorred);
 }
-.fas2
+.fasBlue
 {
     color: var(--colorblue);
+}
+.btnBlue
+{
+    background-color: var(--colorblue);
+    color: var(--colorbg);
+}
+
+.btnRed{
+    background-color: var(--colorred);
+    color: var(--colorbg);
+}
+
+.fasWhite
+{
+    color: var(--colorbg);
 }
 
 .fab
@@ -12,11 +27,11 @@
     color: var(--colorblue);
 }
 
-.fa-shopping-cart
+.fa-shopping-cart, .fa-solid, .fa-plus
 {
     font-size: 5vh;
 }
-
+/* logo footer */
 .logoInsta, .logoFb, .logoTwitter, .logoYoutube
 {
     max-height: 5vh;

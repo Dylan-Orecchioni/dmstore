@@ -2,13 +2,13 @@
 
 {% block body %}
     <div class="row">
-            <div class="col-12 mt-3 d-flex justify-content-around align-items-center">
-                <h1 class="text-center py-5">{{category.name}}</h1>
+            <div class="col-12 mt-3 d-center">
+                <h1 class="text-center py-5">Catégorie : {{category.name}}</h1>
                 <a class="btn btn-primary" href="{{ path('tag_new',{'id': category.id }) }}">Ajouter un Tag</a>
                 <a class="btn btn-primary" href="{{ path('product_new',{'id': category.id }) }}">Ajouter</a>
             </div>
     </div>
-    <table class="table">
+    <table class="table table-responsive">
         <tbody>
             <tr>
                 <th>Id</th>

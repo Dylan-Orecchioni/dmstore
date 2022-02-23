@@ -24,7 +24,7 @@ class StripeController extends AbstractController
     /**
      * @Route("/create-checkout-session",name="create_checkout_session")
      */
-    public function createSession(CartService $cartService, CommandeService $commandeService)
+    public function createSession(CartService $cartService)
     {
 
         /** @var User $user */

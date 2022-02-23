@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CustomerHomeController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(ProductRepository $productRepository, CategoryRepository $categoryRepository): Response
+    public function index(ProductRepository $productRepository): Response
     {
         $products = $productRepository->findAll();
         $formRegister = $this->createForm(RegistrationFormType::class);

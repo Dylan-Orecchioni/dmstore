@@ -212,7 +212,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setAdress(Adress $adress): self
     {
-        // set the owning side of the relation if necessary
+        
         if ($adress->getUser() !== $this) {
             $adress->setUser($this);
         }
