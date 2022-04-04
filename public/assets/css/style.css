@@ -13,6 +13,10 @@ body {
     background-color: var(--colorbg);
 }
 
+footer {
+    padding: 0 !important;
+}
+
 input 
 {
     font-family: var(--text);
