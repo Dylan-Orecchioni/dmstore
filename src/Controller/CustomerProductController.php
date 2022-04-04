@@ -31,7 +31,7 @@ class CustomerProductController extends AbstractController
     }
 
     /**
-     * @Route("customer/category/{idCategory}/{idTag}", name="customer_product_show")
+     * @Route("customer/product/{idCategory}/{idTag}", name="customer_product_show")
      */
     public function index(int $idCategory,int $idTag,ProductRepository $productRepository,CategoryRepository $categoryRepository,TagRepository $tagRepository)
     {
