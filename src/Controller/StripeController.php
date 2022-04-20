@@ -32,7 +32,7 @@ class StripeController extends AbstractController
 
         Stripe::setApiKey('sk_test_51IBjOmJxItuCvN48kVDdR9Tg52Npf4IJydX0TFxyioJFxo5vdlObzoYYTmiVZ2BD2XqGQkvsWaj8UNNzEz3ekgMo00jPcW004c');
 
-        $domain = 'http://127.0.0.1:8000';
+        $domain = 'https://dmstore.fr';
 
         /** @var CartRealProduct[] $detailcart */
         $detailcart = $cartService->getDetailedCartItems();

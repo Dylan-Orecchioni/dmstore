@@ -2,6 +2,7 @@
 @import url(media.css);
 @import url(icon.css);
 @import url(admin.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Orbitron:wght@400;500;600;700;800&display=swap');
 
 * {
     margin: 0;

@@ -4,6 +4,6 @@
     --colorbg: #f8f8f8;
     --colorbtnAdmin: rgba(22, 21, 21, 0.883);
     --navbarAdmin: rgba(22, 21, 21, 0.883);
-    --title: Orbitron;
-    --text: Open Sans;
+    --title: "Orbitron", serif;
+    --text: "Open Sans", serif;
 }
