@@ -92,6 +92,11 @@
                             <form action="{{ path('create_checkout_session') }}" method="POST">
                                 <button type="submit" id="checkout-button" class="btn btn-success btnStyle">Paiement sur stripe</button>
                             </form>
+                            <div>
+                                <label for="cgv" class="colortitleBlue fontText">Veuillez accepter les CGV</label>
+                                <input type="radio" name="cgv"> </br>
+                                <span><a href="{{ asset('uploads/documents/CGV.pdf')}}" class="cgv">voir les cgv</a></span>
+                            </div>
                         {% else %}
                             <p class="fontTitle colortitleBlue">Veuillez configurer votre adresse pour pouvoir finaliser la commande.</p>
                         {% endif %}
