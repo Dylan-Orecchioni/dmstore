@@ -19,41 +19,37 @@ class HandleRegistrationController extends AbstractController
      */
     public function handleRegister(Request $request,UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager)
     {
-        $user = new User()  ;     
+        $user = new User();     
         $formRegister = $this->createForm(RegistrationFormType::class,$user);
 
         $formRegister->handleRequest($request);
-
-        if($formRegister->isSubmitted() && $formRegister->isValid())
-        {
-            if ($formRegister->isSubmitted() && $formRegister->isValid()) {
-                // encode the plain password
         
-       
-                $user->setPassword(
+        
+        if ($formRegister->isSubmitted() && $formRegister->isValid()) {
+            // encode the plain password
+            $user->setPassword(
                 $userPasswordHasher->hashPassword(
-                        $user,
-                        $formRegister->get('plainPassword')->getData()
+                    $user,
+                    $formRegister->get('plainPassword')->getData()
                     )
                 );
-    
-                $entityManager->persist($user);
                 
-                $address = new Adress();
-                $address->setUser($user);
-                $address->setAdress($formRegister->get("adress")->getData());
-                $address->setCp($formRegister->get("cp")->getData());
-                $address->setCity($formRegister->get("city")->getData());
-    
-                $entityManager->persist($address);
-    
-                $entityManager->flush();
-                // do anything else you need here, like send an email
-    
-                return $this->redirectToRoute('app_login');
-            }
+            $entityManager->persist($user);
+            
+            $address = new Adress();
+            $address->setUser($user);
+            $address->setAdress($formRegister->get("adress")->getData());
+            $address->setCp($formRegister->get("cp")->getData());
+            $address->setCity($formRegister->get("city")->getData());
+
+            $entityManager->persist($address);
+
+            $entityManager->flush();
+            // do anything else you need here, like send an email
+            return $this->redirectToRoute('app_login');
         }
         
-        return $this->redirectToRoute('app_login');
+        
+        return $this->redirectToRoute('home');
     }
 }

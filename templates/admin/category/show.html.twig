@@ -2,10 +2,12 @@
 
 {% block body %}
     <div class="row">
-            <div class="col-12 mt-3 d-center">
-                <h1 class="text-center py-5">Catégorie : {{category.name}}</h1>
-                <a class="btn btn-primary" href="{{ path('tag_new',{'id': category.id }) }}">Ajouter un Tag</a>
-                <a class="btn btn-primary" href="{{ path('product_new',{'id': category.id }) }}">Ajouter</a>
+            <div class="col-12 mt-3 d-center column">
+                <h1 class="colortitleRed fontTitle text-center py-5">Catégorie : {{category.name}}</h1>
+                <div class=" d-center justify-between p-3">
+                    <a class="btn btn-primary m-2" href="{{ path('tag_new',{'id': category.id }) }}">Ajouter un Tag</a>
+                    <a class="btn btn-primary" href="{{ path('product_new',{'id': category.id }) }}">Ajouter un produit</a>
+                </div>
             </div>
     </div>
     <table class="table table-responsive">
@@ -25,9 +27,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_index') }}">back to list</a>
+    <a href="{{ path('category_index') }}" class="btn btn-secondary m-2">Retour</a>
 
-    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+    <a href="{{ path('category_edit', {'id': category.id}) }}" class="btn btn-secondary m-2">Modifier catégorie</a>
 
     {{ include('admin/category/_delete_form.html.twig') }}
 {% endblock %}

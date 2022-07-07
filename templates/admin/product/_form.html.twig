@@ -9,23 +9,23 @@
                         </div>
                         <div class="d-center column my-3">
                             <label for="" class="labelStyle h4 py-2">Taille</label>
-                            {{ form_widget(form.size) }}
+                            {{ form_widget(form.size, {'attr': {'class': 'col-9 myRounded'}}) }}
                         </div>
                         <div class="d-center column my-3">
                             <label for="" class="labelStyle h4 py-2">Prix</label>
-                            {{ form_widget(form.price) }}
+                            {{ form_widget(form.price, {'attr': {'class': 'col-9 myRounded'}}) }}
                         </div>
                         <div class="d-center column my-3">
                             <label for="" class="labelStyle h4 py-2">Description</label>
-                            {{ form_widget(form.description) }}
+                            {{ form_widget(form.description, {'attr': {'class': 'col-9 myRounded'}}) }}
                         </div>
                         <div class="d-center column my-3">
                             <label for="" class="labelStyle h4 py-2">Pièce jointe</label>
-                            {{ form_widget(form.file) }}
+                            {{ form_widget(form.file, {'attr': {'class': 'col-9 myRounded'}}) }}
                         </div>
                         <div class="d-center column my-3">
                             <label for="" class="labelStyle h4 py-2">Tag</label>
-                            {{ form_widget(form.tag) }}
+                            {{ form_widget(form.tag, {'attr': {'class': 'col-9 myRounded'}}) }}
                         </div>
                     <div class="my-5">
                         <button class="btn btnBlue" type="submit">{{ button_label|default('Enregistrer') }}</button>
